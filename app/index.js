@@ -3,8 +3,6 @@
     const app = electron.app;
     const BrowserWindow = electron.BrowserWindow;
     const globalShortcut = electron.globalShortcut;
-    const path = require('path');
-    const url = require('url');
     let mainWindow;
 
     function createWindow() {
@@ -13,7 +11,7 @@
             minimizable: true,
             closable: true,
             movable: true,
-            title: "ESRG",
+            title: "ESRG - Estabilidade de Solo Reforçado com Geossintéticos",
             show: true,
             autoHideMenuBar: true,
             titleBarStyle: 'hidden-inset'
