@@ -1,5 +1,0 @@
-Node - Servidor de aplicação (https://nodejs.org/en/)
-Angular - Framework JS (https://angularjs.org/)
-Git - Gerenciador de Versionamento (https://git-scm.com/)
-Bootstrap - Framework CSS (http://getbootstrap.com/)
-Template - Comprado (https://wrapbootstrap.com/theme/mouldifi-responsive-rtl-admin-theme-WB009538N)
