@@ -1,0 +1,84 @@
+Parametros de entrada
+    1 -  Geometria do Muro
+        - Altura do Muro = H (numero)m
+            info : [
+                - qualquer valor inteiro positivo
+                - considerar embutimento >= 0.4m a favor da segurança
+                - valor mulitpo do espaçamento
+            ]
+        - Sobrecarga = q (numero)kN/m
+            info : [
+                - Esse valor sera convertido em metros e somado a altura do muro
+            ]
+        - Espaçamento dos reforços = Sv (numero)metros
+            info : [
+                - Esse valor sera constante em todo o muro
+                - Deve ser >= 0.4m
+            ]
+        - Inclinação da face = (select) 
+            options : [
+                - 3H:1V / 71.56°
+                - 2H:1V / 63.43°
+                - 1H:1V / 45°
+            ]
+            obs : [
+                Resgata dados de uma tabela
+            ]
+    2 - Parametros do Solo de enchimento
+        - Tipo de Solo = (select)
+            options : [
+                - pedra britada
+                - areia
+                - areai siltosa
+                - outro
+            ]
+            obs : [
+                associado a tabelas,
+                ao selecionar outros, sera adicionado um campo para digitação,
+                ao selecionar definido ira popular os campos a seguir
+            ]
+        - Indice de plasticidade = IP (numero)%
+        - Peso especifico = γ (numero) kN/m³
+        - Angulo de atrito = Φ' (numero) °
+        - Coesão = c' (numero) kPa
+        - Modulo Tangent Inicial = k (numero)
+        - Modulo Expoente = n (numero) 
+
+    3 - Parametros do Solo de Fundação 
+        mesmo que 2
+    4 - Parametros do reforços
+        - Tipo de geossintetico = (select)
+            options : [
+
+            ]
+        - Resistencia à tração = (numer)kN/m²    
+        - Alongamento na ruptura = (numero)m
+        - Módulo de resintencia a tração = Jr (numero)kN/m
+        - Fator de seguranca por danos de instalação = (numero)
+        - Fator de seguranca para fluencia = (numero)
+        - Fator de seguranca para degradação quimica = (numero)
+        - Fator de seguranca para degradação biologica = (numero)
+        - Resistencia de projeto = Td (numero)
+    5 - Parametros do bloco
+        - Defaciamento = (select)
+            options : [
+
+            ]
+        - Dimensões do bloco (populado por defaciamento)
+        - Eficiencia do acoplamento  = (numero) %
+    6 - Parametros da Compactação
+        - Modelos =  (select)
+            options : [
+                - rolo compactador
+                - placa
+            ]
+            info : [
+                novo select com modelos
+            ]
+        if(rolo){
+            - Energia  de compactação = (numero)kPa
+            - Largura do rolo = (numero) m
+        }else if(placa){
+            - Energia  de compactação = (numero)kPa
+            - Area = (numero)m²
+        }
