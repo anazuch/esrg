@@ -1,7 +1,6 @@
 (function() {
     esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
-        const ipc = _require('electron').ipcRenderer
-
+        const _buildProductionPath = 'resources/app/';
         $scope.data = {};
         $scope.inLoading = true;
         $scope.error = {
@@ -12,7 +11,7 @@
         $scope.isPrinting = false;
 
         $scope.init = function() {
-            jsonfile.readFile('source/assets/data/dataDefinition.json', function(err, data) {
+            jsonfile.readFile(core.getPath('dataDefinition'), function(err, data) {
                 if (_.isEmpty(data)) {
                     $scope.error.code = '404';
                     $scope.error.message = 'Não foi possivel recuperar os dados iniciais, favor reiniciar o programa. Se o erro persistir contate o administrador';
