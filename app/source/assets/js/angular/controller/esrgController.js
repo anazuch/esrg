@@ -1,5 +1,6 @@
 (function() {
     esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
+        const ipc = _require('electron').ipcRenderer
 
         $scope.data = {};
         $scope.inLoading = true;
@@ -8,6 +9,7 @@
             code: '',
             message: ''
         }
+        $scope.isPrinting = false;
 
         $scope.init = function() {
             jsonfile.readFile('source/assets/data/dataDefinition.json', function(err, data) {
@@ -20,6 +22,14 @@
                     $scope.inLoading = false;
                 }, 0)
             });
+        }
+
+        $scope.printPdf = function() {
+            $scope.isPrinting = true;
+            ipc.send('print-to-pdf');
+            $timeout(function() {
+                $scope.isPrinting = false;
+            }, 1000)
         }
 
         $scope.isEmpty = _.isEmpty;
