@@ -62,9 +62,8 @@
                     readStream.once('error', (err) => {
                         console.error(err);
                     });
-                    readStream.once('end', () => {
-                        readStream.pipe(fs.createWriteStream(result));
-                    });
+                    readStream.once('end', () => {});
+                    readStream.pipe(fs.createWriteStream(result));
                 });
             })
         })
