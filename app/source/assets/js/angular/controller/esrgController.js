@@ -2,6 +2,7 @@
     esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
 
         $scope.data = {};
+        $scope.inLoading = true;
         $scope.error = {
             status: false,
             code: '',
@@ -16,6 +17,7 @@
                 }
                 $timeout(() => {
                     $scope.data = data;
+                    $scope.inLoading = false;
                 }, 0)
             });
         }

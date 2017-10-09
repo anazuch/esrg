@@ -20,6 +20,9 @@
 </head>
 
 <body ng-app="esrgApp" ng-controller="EsrgController" ng-init="init()">
+    <div class="overflow-loader" ng-show="inLoading">
+        <div class="loader"></div>
+    </div>
     <div class="page-container">
         <div class="page-sidebar">
             <div ng-repeat="obj in data track by $index">
