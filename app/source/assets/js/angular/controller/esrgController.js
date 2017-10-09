@@ -8,11 +8,7 @@
             message: ''
         }
 
-        $scope.test = 'test';
-        console.log('teste1')
-
         $scope.init = function() {
-            console.log('teste')
             jsonfile.readFile('source/assets/data/dataDefinition.json', function(err, data) {
                 if (_.isEmpty(data)) {
                     $scope.error.code = '404';
@@ -23,5 +19,7 @@
                 }, 0)
             });
         }
+
+        $scope.isEmpty = _.isEmpty;
     }]);
 })();

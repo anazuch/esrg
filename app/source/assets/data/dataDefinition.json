@@ -18,6 +18,7 @@
                     "value": null,
                     "symbol": "q",
                     "um": "kN/m",
+                    "type": "number",
                     "label": "Sobrecarga",
                     "info": [
                         "Esse valor sera convertido em metros e somado a altura do muro"

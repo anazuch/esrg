@@ -1,0 +1,126 @@
+.input-adjust {
+    display: flex;
+}
+
+.input-adjust .form-control {
+    border: 0px;
+    border-bottom: 1px #dedede solid;
+    border-radius: 0px;
+    height: 25px;
+    text-align: right;
+    padding-right: 3px;
+}
+
+.input-adjust .form-control:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #00b8ce;
+}
+
+.input-adjust span {
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.input-adjust .symbol {
+    color: #00b8ce;
+}
+
+label {
+    font-size: 12px;
+}
+
+.page-sidebar {
+    background: #f9f9f9;
+    color: inherit;
+    position: absolute;
+    padding: 20px;
+    overflow-y: scroll;
+    width: 300px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #AEAEAE;
+}
+
+.main-container {
+    padding-left: 300px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.info {
+    background-color: #bdbdbd;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    border-radius: 19px;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    line-height: 13px;
+    font-size: 9px;
+    top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.info-view {
+    display: none;
+    background: rgba(255, 255, 255, 0.93);
+    width: auto;
+    color: #000;
+    left: 0;
+    position: absolute;
+    z-index: 11;
+    font-size: 12px;
+    border: 1px solid #dedede;
+}
+
+.info-view ul {
+    padding: 3px 0px;
+    list-style: none;
+    margin: 0px;
+}
+
+.info:hover+.info-view {
+    display: block;
+}
+
+.info-view li {
+    text-align: left;
+    padding: 0px 10px 0px 15px;
+}
+
+.info-view li:before {
+    content: "-";
+    position: absolute;
+    left: 7px;
+}
+
+.relative {
+    position: relative;
+}
+
+h4 {
+    font-size: 16px;
+}
