@@ -1,0 +1,329 @@
+    {
+        "geometriaMuro": {
+            "title": "Geometria do Muro",
+            "inputs": {
+                "alturaMuro": {
+                    "value": null,
+                    "symbol": "H",
+                    "um": "m",
+                    "type": "number",
+                    "label": "Altura do muro",
+                    "info": [
+                        "Qualquer valor inteiro positivo",
+                        "Considerar embutimento >= 0.4m a favor da segurança",
+                        "Valor multiplo do espaçamento"
+                    ]
+                },
+                "sobrecarga": {
+                    "value": null,
+                    "symbol": "q",
+                    "um": "kN/m",
+                    "label": "Sobrecarga",
+                    "info": [
+                        "Esse valor sera convertido em metros e somado a altura do muro"
+                    ]
+                },
+                "espacamentoReforcos": {
+                    "value": null,
+                    "symbol": "Sv",
+                    "um": "m",
+                    "type": "number",
+                    "label": "Espaçamento dos reforços",
+                    "info": [
+                        "Esse valor sera constante em todo o muro",
+                        "Deve ser >= 0.4m"
+                    ]
+                },
+                "inclinacaoFace": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Inclinação da face",
+                    "options": [
+                        { "value": null, "label": "3\"H\":1V / 71.56°" },
+                        { "value": null, "label": "2\"H\":1V / 63.43°" },
+                        { "value": null, "label": "1\"H\":1V / 45°" }
+                    ]
+                }
+            }
+        },
+        "soloEnchimento": {
+            "title": "Parametros do Solo de enchimento",
+            "inputs": {
+                "tipoSolo": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Tipo de solo",
+                    "options": [
+                        { "value": null, "label": "Pedra Britada" },
+                        { "value": null, "label": "Areia" },
+                        { "value": null, "label": "Areia Siltosa" },
+                        { "value": null, "label": "Outro" }
+                    ]
+                },
+                "indicePlasticidade": {
+                    "value": null,
+                    "symbol": "IP",
+                    "um": "%",
+                    "type": "number",
+                    "label": "Indice de plasticidade",
+                    "info": []
+                },
+                "pesoEspecifico": {
+                    "value": null,
+                    "symbol": "γ",
+                    "um": "kN/m³",
+                    "type": "number",
+                    "label": "Peso especifico",
+                    "info": []
+                },
+                "anguloAtrito": {
+                    "value": null,
+                    "symbol": "Φ'",
+                    "um": "°",
+                    "type": "number",
+                    "label": "Angulo de atrito",
+                    "info": []
+                },
+                "coesao": {
+                    "value": null,
+                    "symbol": "c'",
+                    "um": "kPa",
+                    "type": "number",
+                    "label": "Coesão",
+                    "info": []
+                },
+                "moduloTangenteInicial": {
+                    "value": null,
+                    "symbol": "k",
+                    "um": "",
+                    "type": "number",
+                    "label": "Modulo Tangente inicial",
+                    "info": []
+                },
+                "moduloExpoente": {
+                    "value": null,
+                    "symbol": "n",
+                    "um": "",
+                    "type": "number",
+                    "label": "Modulo expoente",
+                    "info": []
+                }
+            }
+        },
+        "soloFundacao": {
+            "title": "Parametros do Solo de Fundação",
+            "inputs": {
+                "tipoSolo": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Tipo de solo",
+                    "options": [
+                        { "value": null, "label": "Pedra Britada" },
+                        { "value": null, "label": "Areia" },
+                        { "value": null, "label": "Areia Siltosa" },
+                        { "value": null, "label": "Outro" }
+                    ]
+                },
+                "indicePlasticidade": {
+                    "value": null,
+                    "symbol": "IP",
+                    "um": "%",
+                    "type": "number",
+                    "label": "Indice de plasticidade",
+                    "info": []
+                },
+                "pesoEspecifico": {
+                    "value": null,
+                    "symbol": "γ",
+                    "um": "kN/m³",
+                    "type": "number",
+                    "label": "Peso especifico",
+                    "info": []
+                },
+                "anguloAtrito": {
+                    "value": null,
+                    "symbol": "Φ'",
+                    "um": "°",
+                    "type": "number",
+                    "label": "Angulo de atrito",
+                    "info": []
+                },
+                "coesao": {
+                    "value": null,
+                    "symbol": "c'",
+                    "um": "kPa",
+                    "type": "number",
+                    "label": "Coesão",
+                    "info": []
+                },
+                "moduloTangenteInicial": {
+                    "value": null,
+                    "symbol": "k",
+                    "um": "",
+                    "type": "number",
+                    "label": "Modulo Tangente inicial",
+                    "info": []
+                },
+                "moduloExpoente": {
+                    "value": null,
+                    "symbol": "n",
+                    "um": "",
+                    "type": "number",
+                    "label": "Modulo expoente",
+                    "info": []
+                }
+            }
+        },
+        "reforcos": {
+            "title": "Parametros do reforços",
+            "inputs": {
+                "tipoGeossintetico": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Tipo de geossintetico",
+                    "options": []
+                },
+                "resistenciaTracao": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "kN/m²",
+                    "type": "number",
+                    "label": "Resistencia a tração",
+                    "info": []
+                },
+                "alongamentoRuptura": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "m",
+                    "type": "number",
+                    "label": "Alongamento na Ruptura",
+                    "info": []
+                },
+                "modResistenciaTracao": {
+                    "value": null,
+                    "symbol": "Jr",
+                    "um": "kN/m",
+                    "type": "number",
+                    "label": "Modulo de resistencia a tração",
+                    "info": []
+                },
+                "fsDanosInstalacao": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "Fator de seguranca por danos de instalação",
+                    "info": []
+                },
+                "fsFluencia": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "Fator de seguranca para fluencia",
+                    "info": []
+                },
+                "fsDegradacaoQuimica": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "Fator de seguranca para degradação",
+                    "info": []
+                },
+                "fsDegradacaoBiologica": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "Fator de seguranca para degradação biologica",
+                    "info": []
+                },
+                "resistenciaProjeto": {
+                    "value": null,
+                    "symbol": "Td",
+                    "um": "",
+                    "type": "number",
+                    "label": "Resistencia de projeto",
+                    "info": []
+                }
+            }
+        },
+        "bloco": {
+            "title": "Parametros do bloco",
+            "inputs": {
+                "defaciamento": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Defaciamento",
+                    "options": []
+                },
+                "dimencoes": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "Dimensões do bloco",
+                    "info": []
+                },
+                "eficienciaAcoplamento": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "%",
+                    "type": "number",
+                    "label": "Eficiencia do acoplamento",
+                    "info": []
+                }
+            }
+        },
+        "compactacao": {
+            "title": "Parametros da Compactação",
+            "inputs": {
+                "modelos": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Modelos",
+                    "options": [
+                        { "value": "rolo", "label": "Rolo Compactador" },
+                        { "value": "placa", "label": "Placa" }
+                    ]
+                },
+                "energiaCompactacao": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "kPa",
+                    "type": "number",
+                    "label": "Energia de compactação",
+                    "info": []
+                },
+                "larguraRolo": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "m",
+                    "type": "number",
+                    "label": "Largura do rolo",
+                    "info": []
+                },
+                "area": {
+                    "value": null,
+                    "symbol": "",
+                    "um": "m²",
+                    "type": "number",
+                    "label": "Area",
+                    "info": []
+                }
+            }
+        }
+    }
