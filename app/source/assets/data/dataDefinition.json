@@ -118,6 +118,16 @@
         "soloFundacao": {
             "title": "Parametros do Solo de Fundação",
             "inputs": {
+                "igualAEnchimento": {
+                    "value": false,
+                    "symbol": "",
+                    "um": "",
+                    "type": "checkbox",
+                    "label": "Mesmo que o enchimento",
+                    "info": [
+                        "Ao selecionar será clonado os dados do solo de enchimento"
+                    ]
+                },
                 "tipoSolo": {
                     "value": null,
                     "symbol": "",

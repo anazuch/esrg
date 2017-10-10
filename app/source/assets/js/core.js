@@ -26,3 +26,13 @@ const ipc = _require('electron').ipcRenderer;
 
     window.core = core;
 })();
+
+Object.defineProperty(window, 'CONSTANTS', {
+    value: (function() {
+        var config = {};
+        Object.defineProperty(config, 'APP_NAME', { value: 'ESRG - Estabilidade de Solo Reforçado com Geossintéticos', writable: false })
+        Object.defineProperty(config, 'COPYRIGHT', { value: '©2017 ESRG - Estabilidade de Solo Reforçado com Geossintéticos - Created by Ana Carolina Zuchetto', writable: false })
+        return config;
+    })(),
+    writable: false
+});

@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="esrgApp">
 
 <head>
+    <meta charset="UTF-8">
+    <link href="assets/css/entypo.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/mouldifi-core.css" rel="stylesheet">
+    <link href="assets/css/mouldifi-forms.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <title>{{::CONSTANTS.APP_NAME}}</title>
     <script>
         window._require = require;
         window._exports = window.exports;
@@ -10,16 +18,10 @@
         delete window.exports;
         delete window.module;
     </script>
-    <link href="assets/css/entypo.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/mouldifi-core.css" rel="stylesheet">
-    <link href="assets/css/mouldifi-forms.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-    <title>ESRG</title>
+
 </head>
 
-<body ng-app="esrgApp" ng-controller="EsrgController" ng-init="init()">
+<body ng-controller="EsrgController" ng-init="init()">
     <div class="overflow-loader" ng-show="inLoading">
         <div class="loader"></div>
     </div>
@@ -44,10 +46,13 @@
                             </div>
                         </div>
                         <div ng-switch-when="select">
-                            <select class="form-control"> 
+                            <select class="form-control" ng-model="input.value"> 
                                 <option>Selecione</option> 
                                 <option ng-repeat="option in input.options" value="option.value">{{::option.label}}</option>
                             </select>
+                        </div>
+                        <div ng-switch-when="checkbox">
+                            <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -74,7 +79,7 @@
                 <button ng-click="printPdf()">Print</button>
 
                 <footer class="footer-main">
-                    © 2017 <strong>ESRG</strong> Created by <a href="javascript:void(0)">Ana Carolina Zuchetto</a>
+                    {{::CONSTANTS.COPYRIGHT}}
                 </footer>
             </div>
         </div>

@@ -3,6 +3,7 @@
         const _buildProductionPath = 'resources/app/';
         $scope.data = {};
         $scope.inLoading = true;
+
         $scope.error = {
             status: false,
             code: '',
@@ -19,6 +20,7 @@
                 $timeout(() => {
                     $scope.data = data;
                     $scope.inLoading = false;
+                    _bindListeners();
                 }, 0)
             });
         }
@@ -29,6 +31,20 @@
             $timeout(function() {
                 $scope.isPrinting = false;
             }, 1000)
+        }
+
+        function _bindListeners() {
+            $scope.$watch('data.soloFundacao.inputs.igualAEnchimento.value', function() {
+                _cloneValues($scope.data.soloEnchimento.inputs, $scope.data.soloFundacao.inputs, 'value')
+            });
+        }
+
+        function _cloneValues(obj1, obj2, property) {
+            _.forEach(obj1, function(data, key) {
+                if (obj2[key]) {
+                    obj2[key][property] = data[property];
+                }
+            });
         }
 
         $scope.isEmpty = _.isEmpty;

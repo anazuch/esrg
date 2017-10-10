@@ -168,3 +168,11 @@ h4 {
     padding-left: 10px;
     width: 842px;
 }
+
+.input-check {
+    width: auto;
+    float: left;
+    position: absolute;
+    top: -7px;
+    left: 160px;
+}
