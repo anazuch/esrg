@@ -1,6 +1,7 @@
 (function() {
     const electron = require('electron');
     const fs = require('fs')
+    const moment = require('moment')
     const app = electron.app;
     const BrowserWindow = electron.BrowserWindow;
     const globalShortcut = electron.globalShortcut;
@@ -44,7 +45,10 @@
     })
 
     ipc.on('print-to-pdf', function(event) {
-        const pdfPath = 'dist/print.pdf';
+        var d = new Date();
+        var timeStamp = moment().format('YYYYMMDD-HHmm');
+        const fileName = "relatorio-" + timeStamp + '.pdf';
+        const pdfPath = 'dist/' + fileName;
         const win = BrowserWindow.fromWebContents(event.sender)
 
         win.webContents.printToPDF({
@@ -55,9 +59,12 @@
         }, (error, data) => {
             fs.writeFile(pdfPath, data, (error) => {
                 var savePath = dialog.showSaveDialog(win, {
-                    title: 'relt',
+                    title: fileName,
                     defaultPath: pdfPath
                 }, function(result) {
+                    if (!result) {
+                        return;
+                    }
                     let readStream = fs.createReadStream(pdfPath);
                     readStream.once('error', (err) => {
                         console.error(err);
