@@ -1,6 +1,5 @@
 (function() {
     esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
-        const _buildProductionPath = 'resources/app/';
         $scope.data = {};
         $scope.inLoading = true;
 

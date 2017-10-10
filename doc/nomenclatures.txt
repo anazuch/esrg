@@ -5,3 +5,4 @@ Bootstrap - Framework CSS (http://getbootstrap.com/)
 Template - Comprado (https://wrapbootstrap.com/theme/mouldifi-responsive-rtl-admin-theme-WB009538N)
 Electron - compilador html (https://electron.atom.io/)
 NPM - Gerenciador de pacotes do NODEJS (https://www.npmjs.com/)
+Icon = https://www.flaticon.com/free-icon/axis_112723#term=engineering&page=1&position=24

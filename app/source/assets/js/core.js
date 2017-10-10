@@ -6,6 +6,7 @@ const ipc = _require('electron').ipcRenderer;
 (function() {
     var core = (function() {
         const _isProduction = false;
+        const _buildProductionPath = 'resources/app/';
 
         let _pathMap = {
             'dataDefinition': 'source/assets/data/dataDefinition.json'
