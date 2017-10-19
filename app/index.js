@@ -10,6 +10,9 @@
     const { dialog } = require('electron')
     let mainWindow;
 
+    const _isProduction = false;
+    const _buildProductionPath = 'resources/app/';
+
     function createWindow() {
         mainWindow = new BrowserWindow({
             maximizable: true,
@@ -48,7 +51,11 @@
         var d = new Date();
         var timeStamp = moment().format('YYYYMMDD-HHmm');
         const fileName = "relatorio-" + timeStamp + '.pdf';
-        const pdfPath = 'dist/' + fileName;
+        let pdfPath = 'dist/' + fileName;
+        if (_isProduction) {
+            pdfPath = _buildProductionPath + pdfPath;
+        }
+
         const win = BrowserWindow.fromWebContents(event.sender)
 
         win.webContents.printToPDF({

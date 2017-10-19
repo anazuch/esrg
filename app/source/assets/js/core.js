@@ -5,14 +5,14 @@ const ipc = _require('electron').ipcRenderer;
 
 (function() {
     var core = (function() {
-        const _isProduction = false;
+        const _isProduction = true;
         const _buildProductionPath = 'resources/app/';
 
         let _pathMap = {
             'dataDefinition': 'source/assets/data/dataDefinition.json'
         }
 
-        let getPath = function(key) {
+        function getPath(key) {
             var path = _pathMap[key];
             if (_isProduction) {
                 path = _buildProductionPath + path;
@@ -20,8 +20,17 @@ const ipc = _require('electron').ipcRenderer;
             return path;
         }
 
+        function cloneValues(obj1, obj2, property) {
+            _.forEach(obj1, function(data, key) {
+                if (obj2[key]) {
+                    obj2[key][property] = data[property];
+                }
+            });
+        }
+
         return {
-            getPath: getPath
+            getPath: getPath,
+            cloneValues: cloneValues
         }
     })();
 

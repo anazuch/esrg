@@ -34,15 +34,7 @@
 
         function _bindListeners() {
             $scope.$watch('data.soloFundacao.inputs.igualAEnchimento.value', function() {
-                _cloneValues($scope.data.soloEnchimento.inputs, $scope.data.soloFundacao.inputs, 'value')
-            });
-        }
-
-        function _cloneValues(obj1, obj2, property) {
-            _.forEach(obj1, function(data, key) {
-                if (obj2[key]) {
-                    obj2[key][property] = data[property];
-                }
+                core.cloneValues($scope.data.soloEnchimento.inputs, $scope.data.soloFundacao.inputs, 'value')
             });
         }
 
