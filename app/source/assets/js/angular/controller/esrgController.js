@@ -22,6 +22,7 @@
                     _bindListeners();
                 }, 0)
             });
+            jsonfile.readFile(core.getPath('abacos'), function(err, data) {});
         }
 
         $scope.printPdf = function() {

@@ -9,7 +9,11 @@ const ipc = _require('electron').ipcRenderer;
         const _buildProductionPath = 'resources/app/';
 
         let _pathMap = {
-            'dataDefinition': 'source/assets/data/dataDefinition.json'
+            'dataDefinition': 'source/assets/data/dataDefinition.json',
+            'abacos': 'source/assets/data/abacos.json',
+            'fatoresCapacidadeCarga': 'source/assets/data/fatoresCapacidadeCarga.json',
+            'tiposCompactadores': 'source/assets/data/tiposCompactadores.json',
+            'tiposReforcos': 'source/assets/data/tiposReforcos.json',
         }
 
         function getPath(key) {

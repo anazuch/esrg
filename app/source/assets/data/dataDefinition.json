@@ -206,12 +206,35 @@
                     "um": "",
                     "type": "select",
                     "label": "Tipo de geossintetico",
-                    "fileAssociation": "typeOfReinforcement",
+                    "fileAssociation": "tipoMaterial",
                     "options": [
                         { "value": "", "label": "Selecionar" },
                         { "value": "geogrelhaPoliaramida", "label": "Geogrelhas de poliaramida" },
                         { "value": "geogrelhaPP", "label": "Geogrelhas (PET ou PEAD)" },
                         { "value": "geotexteis", "label": "Geotexteis não tecido" }
+                    ]
+                },
+                "tipoReforco": {
+                    "value": "",
+                    "symbol": "",
+                    "um": "",
+                    "type": "select",
+                    "label": "Tipo de reforço",
+                    "fileAssociation": "tiposReforcos",
+                    "options": [
+                        { "value": "", "label": "Selecionar" }
+                    ]
+                },
+                "si": {
+                    "value": "",
+                    "symbol": "",
+                    "um": "",
+                    "type": "number",
+                    "label": "SI",
+                    "info": [
+                        "Geogrelha de poliaramida - 0.5 a 3.2",
+                        "Geogrelha (PET ou PEAD) - 0.03 a 0.12",
+                        "Geotexteis não tecido - 0.003 a 0.012"
                     ]
                 },
                 "resistenciaTracao": {

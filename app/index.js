@@ -26,7 +26,11 @@
         })
 
         mainWindow.loadURL(`file://${__dirname}/source/index.html`);
-        mainWindow.webContents.openDevTools();
+
+        if (!_isProduction) {
+            mainWindow.webContents.openDevTools();
+        }
+
         mainWindow.on('closed', function() {
             mainWindow = null;
         })
