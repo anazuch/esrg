@@ -46,13 +46,17 @@
                             </div>
                         </div>
                         <div ng-switch-when="select">
-                            <select class="form-control" ng-model="input.value"> 
-                                <option>Selecione</option> 
-                                <option ng-repeat="option in input.options" value="option.value">{{::option.label}}</option>
+                            <select class="form-control" ng-model="input.value">
+                                <option ng-repeat="option in input.options" value="{{option.value}}">{{option.label}}</option>
                             </select>
                         </div>
                         <div ng-switch-when="checkbox">
                             <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
+                        </div>
+                        <div ng-switch-when="text">
+                            <div class="input-adjust">
+                                <input type="text" class="form-control" ng-model="input.value" placeholder="">
+                            </div>
                         </div>
                     </div>
                 </div>
