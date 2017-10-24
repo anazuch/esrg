@@ -5,7 +5,7 @@ const ipc = _require('electron').ipcRenderer;
 
 (function() {
     var core = (function() {
-        const _isProduction = true;
+        const _isProduction = false;
         const _buildProductionPath = 'resources/app/';
 
         let _pathMap = {

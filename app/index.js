@@ -52,6 +52,7 @@
         var timeStamp = moment().format('YYYYMMDD-HHmm');
         const fileName = "relatorio-" + timeStamp + '.pdf';
         let pdfPath = 'dist/' + fileName;
+
         if (_isProduction) {
             pdfPath = _buildProductionPath + pdfPath;
         }

@@ -41,10 +41,12 @@
                     "um": "",
                     "type": "select",
                     "label": "Inclinação da face",
+                    "fileAssociation": "abacos",
                     "options": [
-                        { "value": null, "label": "3\"H\":1V / 71.56°" },
-                        { "value": null, "label": "2\"H\":1V / 63.43°" },
-                        { "value": null, "label": "1\"H\":1V / 45°" }
+                        { "value": "90", "label": "90°" },
+                        { "value": "71.60", "label": "71.56° / 3\"H\":1V" },
+                        { "value": "63.43", "label": "63.43° / 2\"H\":1V" },
+                        { "value": "45", "label": "45° / 1\"H\":1V" }
                     ]
                 }
             }
@@ -200,7 +202,12 @@
                     "um": "",
                     "type": "select",
                     "label": "Tipo de geossintetico",
-                    "options": []
+                    "fileAssociation": "typeOfReinforcement",
+                    "options": [
+                        { "value": "geogrelhaPoliaramida", "label": "Geogrelhas de poliaramida" },
+                        { "value": "geogrelhaPP", "label": "Geogrelhas (PET ou PEAD)" },
+                        { "value": "geotexteis", "label": "Geotexteis não tecido" }
+                    ]
                 },
                 "resistenciaTracao": {
                     "value": null,
