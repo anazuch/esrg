@@ -1,4 +1,5 @@
-    {
+(function() {
+    var dataDefinition = {
         "geometriaMuro": {
             "title": "Geometria do Muro",
             "inputs": {
@@ -374,3 +375,5 @@
             }
         }
     }
+    window.dataDefinition = dataDefinition;
+})()

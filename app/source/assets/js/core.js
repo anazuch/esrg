@@ -5,25 +5,6 @@ const ipc = _require('electron').ipcRenderer;
 
 (function() {
     var core = (function() {
-        const _isProduction = false;
-        const _buildProductionPath = 'resources/app/';
-
-        let _pathMap = {
-            'dataDefinition': 'source/assets/data/dataDefinition.json',
-            'abacos': 'source/assets/data/abacos.json',
-            'fatoresCapacidadeCarga': 'source/assets/data/fatoresCapacidadeCarga.json',
-            'tiposCompactadores': 'source/assets/data/tiposCompactadores.json',
-            'tiposReforcos': 'source/assets/data/tiposReforcos.json',
-        }
-
-        function getPath(key) {
-            var path = _pathMap[key];
-            if (_isProduction) {
-                path = _buildProductionPath + path;
-            }
-            return path;
-        }
-
         function cloneValues(obj1, obj2, property) {
             _.forEach(obj1, function(data, key) {
                 if (obj2[key]) {
@@ -33,8 +14,7 @@ const ipc = _require('electron').ipcRenderer;
         }
 
         return {
-            getPath: getPath,
-            cloneValues: cloneValues
+            cloneValues
         }
     })();
 

@@ -9,9 +9,10 @@
     const shell = electron.shell
     const { dialog } = require('electron')
     let mainWindow;
+    const remote = require('electron').remote;
+    const appPath = process.env.NODE_ENV === 'production' ? remote.app.getAppPath() : __dirname;
 
     const _isProduction = false;
-    const _buildProductionPath = 'resources/app/';
 
     function createWindow() {
         mainWindow = new BrowserWindow({
@@ -54,12 +55,8 @@
     ipc.on('print-to-pdf', function(event) {
         var d = new Date();
         var timeStamp = moment().format('YYYYMMDD-HHmm');
-        const fileName = "relatorio-" + timeStamp + '.pdf';
-        let pdfPath = 'dist/' + fileName;
-
-        if (_isProduction) {
-            pdfPath = _buildProductionPath + pdfPath;
-        }
+        const fileName = "relatorio" + timeStamp + '.pdf';
+        let pdfPath = appPath + '/dist/relatorio.pdf';
 
         const win = BrowserWindow.fromWebContents(event.sender)
 
@@ -72,7 +69,7 @@
             fs.writeFile(pdfPath, data, (error) => {
                 var savePath = dialog.showSaveDialog(win, {
                     title: fileName,
-                    defaultPath: pdfPath
+                    defaultPath: fileName
                 }, function(result) {
                     if (!result) {
                         return;
