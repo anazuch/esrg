@@ -11,15 +11,17 @@
         $scope.isPrinting = false;
 
         $scope.init = function() {
-            if (_.isEmpty(window.dataDefinition)) {
-                $scope.error.code = '404';
-                $scope.error.message = 'Não foi possivel recuperar os dados iniciais, favor reiniciar o programa. Se o erro persistir contate o administrador';
-            }
-            $timeout(() => {
-                $scope.data = window.dataDefinition;
-                $scope.inLoading = false;
-                _bindListeners();
-            }, 0);
+            jsonfile.readFile(core.getPath('dataDefinition'), function(err, data) {
+                if (_.isEmpty(data)) {
+                    $scope.error.code = '404';
+                    $scope.error.message = 'Não foi possivel recuperar os dados iniciais, favor reiniciar o programa. Se o erro persistir contate o administrador';
+                }
+                $timeout(() => {
+                    $scope.data = data;
+                    $scope.inLoading = false;
+                    _bindListeners();
+                }, 0)
+            });
         }
 
         $scope.printPdf = function() {
