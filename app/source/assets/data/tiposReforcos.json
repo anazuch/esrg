@@ -1,0 +1,144 @@
+[{
+        "label": "Selecione",
+        "value": ""
+    }, {
+        "label": "MacGrid WG 40",
+        "value": "40"
+    },
+    {
+        "label": "MacGrid WG 60",
+        "value": "60"
+    },
+    {
+        "label": "MacGrid WG 90",
+        "value": "90"
+    },
+    {
+        "label": "MacGrid WG 120",
+        "value": "120"
+    },
+    {
+        "label": "MacGrid WG 150",
+        "value": "150"
+    },
+    {
+        "label": "MacGrid WG 200",
+        "value": "200"
+    },
+    {
+        "label": "MacGrid WG 300",
+        "value": "300"
+    },
+    {
+        "label": "MacGrid WG 400",
+        "value": "400"
+    },
+    {
+        "label": "MacGrid WG 500",
+        "value": "500"
+    },
+    {
+        "label": "MacGrid WG 600",
+        "value": "600"
+    },
+    {
+        "label": "MacGrid WG 40S",
+        "value": "40"
+    },
+    {
+        "label": "MacGrid WG 50s",
+        "value": "50"
+    },
+    {
+        "label": "MacGrid WG 65S",
+        "value": "65"
+    },
+    {
+        "label": "MacGrid WG 200S",
+        "value": "200"
+    },
+    {
+        "label": "Microgid",
+        "value": "30"
+    },
+    {
+        "label": "SGi40",
+        "value": "40"
+    },
+    {
+        "label": "SGi60",
+        "value": "60"
+    },
+    {
+        "label": "SGi80",
+        "value": "80"
+    },
+    {
+        "label": "SGi100",
+        "value": "100"
+    },
+    {
+        "label": "SGi120",
+        "value": "120"
+    },
+    {
+        "label": "SGi150",
+        "value": "150"
+    },
+    {
+        "label": "SGi180",
+        "value": "180"
+    },
+    {
+        "label": "SGi200",
+        "value": "200"
+    },
+    {
+        "label": "SGi250",
+        "value": "250"
+    },
+    {
+        "label": "SGi300",
+        "value": "300"
+    },
+    {
+        "label": "SGi400",
+        "value": "400"
+    },
+    {
+        "label": "SGi600",
+        "value": "600"
+    },
+    {
+        "label": "SGi800",
+        "value": "800"
+    },
+    {
+        "label": "SGi1000",
+        "value": "1000"
+    },
+    {
+        "label": "SGi1500",
+        "value": "1500"
+    },
+    {
+        "label": "SGi BX200",
+        "value": "200"
+    },
+    {
+        "label": "SGi BX600",
+        "value": "600"
+    },
+    {
+        "label": "SGi BX800",
+        "value": "800"
+    },
+    {
+        "label": "SGi BX1000",
+        "value": "1000"
+    },
+    {
+        "label": "SGi BX1200",
+        "value": "1200"
+    }
+]

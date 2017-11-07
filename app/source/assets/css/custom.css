@@ -36,6 +36,7 @@ label {
     color: inherit;
     position: absolute;
     padding: 20px;
+    padding-top: 35px;
     overflow-y: scroll;
     width: 300px;
 }
@@ -87,7 +88,7 @@ input::-webkit-inner-spin-button {
 
 .info-view {
     display: none;
-    background: rgba(255, 255, 255, 0.93);
+    background: #fff;
     width: auto;
     color: #000;
     left: 0;
@@ -95,6 +96,8 @@ input::-webkit-inner-spin-button {
     z-index: 11;
     font-size: 12px;
     border: 1px solid #dedede;
+    width: 100%;
+    box-shadow: 0px 3px 6px #9c9c9c;
 }
 
 .info-view ul {
@@ -175,4 +178,28 @@ h4 {
     position: absolute;
     top: -7px;
     left: 160px;
+}
+
+.inputArea {
+    width: 32px;
+    float: left
+}
+
+.flex {
+    width: 100%;
+    display: inline-block;
+}
+
+.flex div {
+    float: left;
+    display: flex;
+}
+
+.flex input {
+    text-align: right;
+    width: 73px;
+}
+
+.flex .multiply {
+    padding: 5px;
 }

@@ -31,8 +31,8 @@
     "dependencies": {
         "angular": "^1.6.3",
         "jsonfile": "^3.0.1",
-        "lodash": "~4.17.4",
-        "moment": "^2.19.0"
+        "moment": "^2.19.0",
+        "underscore": "^1.8.3"
     },
     "devDependencies": {
         "electron": "^1.6.11",

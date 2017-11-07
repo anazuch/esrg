@@ -34,32 +34,44 @@
             <div ng-repeat="obj in data track by $index">
                 <h4>{{::obj.title}}</h4>
                 <div class="form-group relative" ng-repeat="input in obj.inputs track by $index">
-                    <label>{{::input.label}}</label>
-                    <span ng-if="!isEmpty(input.info)" class="info">i</span>
-                    <div class="info-view">
-                        <ul>
-                            <li ng-repeat="info in input.info">{{::info}}</li>
-                        </ul>
-                    </div>
-                    <div ng-switch="input.type">
-                        <div ng-switch-when="number">
-                            <div class="input-adjust">
-                                <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
-                                <input type="number" class="form-control" ng-model="input.value" placeholder="">
-                                <span class="um" ng-if="input.um">{{::input.um}}</span>
+                    <div ng-switch="input.layout">
+                        <div ng-switch-when="multi" class="flex">
+                            <div ng-repeat="inpt in input.inputs track by $index">
+                                <input type="number" class="form-control" ng-model="inpt.value" placeholder="">
+                                <div ng-if="$index < (input.inputs.length - 1)" class="multiply">x</div>
                             </div>
                         </div>
-                        <div ng-switch-when="select">
-                            <select class="form-control" ng-model="input.value">
-                                <option ng-repeat="option in input.options" value="{{option.value}}">{{option.label}}</option>
-                            </select>
-                        </div>
-                        <div ng-switch-when="checkbox">
-                            <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
-                        </div>
-                        <div ng-switch-when="text">
-                            <div class="input-adjust">
-                                <input type="text" class="form-control" ng-model="input.value" placeholder="">
+                        <div ng-switch-default>
+                            <div ng-if="!input.hide">
+                                <label>{{::input.label}}</label>
+                                <span ng-if="!isEmpty(input.info)" class="info">i</span>
+                                <div class="info-view">
+                                    <ul>
+                                        <li ng-repeat="info in input.info">{{::info}}</li>
+                                    </ul>
+                                </div>
+                                <div ng-switch="input.type">
+                                    <div ng-switch-when="number">
+                                        <div class="input-adjust">
+                                            <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
+                                            <input type="number" class="form-control" ng-model="input.value" ng-disabled="input.disabled" placeholder="">
+                                            <span class="um" ng-if="input.um">{{::input.um}}</span>
+                                        </div>
+                                    </div>
+                                    <div ng-switch-when="select">
+                                        <select class="form-control" ng-model="input.value">
+                                            <option ng-repeat="option in input.options" ng-if="!option.hide" value="{{option.value}}">{{option.label}}</option>
+                                        </select>
+                                    </div>
+                                    <div ng-switch-when="checkbox">
+                                        <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
+                                    </div>
+                                    <div ng-switch-when="text">
+                                        <div class="input-adjust">
+                                            <input type="text" class="form-control" ng-model="input.value" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
