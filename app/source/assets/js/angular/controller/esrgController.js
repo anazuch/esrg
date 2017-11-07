@@ -89,7 +89,7 @@
             $scope.$watch('data.compactacao.inputs.modelos.value', function(value) {
                 if (value) {
                     var currentCompactorData = _compactorData[_currentCompactor];
-                    var currentCompactor = _.findWhere(currentCompactorData, { "model": value });
+                    var currentCompactor = _.find(currentCompactorData, { "model": value });
                     if (_.isEqual(_currentCompactor, 'placa')) {
                         $scope.data.compactacao.inputs.area.value = currentCompactor.area;
                         $scope.data.compactacao.inputs.cargaEstatica.value = currentCompactor.charge;
