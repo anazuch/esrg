@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+    <title>Calculo Ana</title>
+</head>
+
+<body>
+    <h3>Verifica��o Tens�o Cisalhante</h3>
+    <p style="color: #a7a4a4;font-style: italic;">obs: utilizar apenas n�meros e "." como separador de casas decimais</p>
+
+    <label for="vxd">Vxd:</label>
+    <input id="vxd" value="" />
+    <label for="vyd">Vyd:</label>
+    <input id="vyd" value="" />
+    <button id="btnSubmit" onclick="exec.doCalc()">Calc</button>
+    <br>
+    <h2 id="eq"></h2>
+
+    <div style="text-align: center; clear: both; display: inline-block; width: 100%;">
+
+        <div style="float: left; ">
+            <div style="clear: both;border-bottom: 1px solid;" id="divid">
+            </div>
+            <div id="area">
+            </div>
+        </div>
+        <div style="float: left;margin-left: 10px;" id="left">
+        </div>
+    </div>
+    <br>
+    <div id="calc" style="border-top: 1px solid #dedede;margin-top: 15px;padding: 5px;"></div>
+
+    <div style="display: inline-block;">
+        <h3>Result: <span id="result"></span></h3>
+    </div>
+    <script src="algoritimofuncao.js"></script>
+</body>
+
+</html>

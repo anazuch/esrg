@@ -115,7 +115,7 @@
             },
             "anguloAtrito": {
                 "value": "",
-                "symbol": "Φ'",
+                "symbol": "∅'",
                 "um": "°",
                 "type": "select",
                 "label": "Ângulo de atrito",
@@ -189,7 +189,7 @@
             },
             "anguloAtrito": {
                 "value": "",
-                "symbol": "Φ'",
+                "symbol": "∅'",
                 "um": "°",
                 "type": "select",
                 "label": "Ângulo de atrito",

@@ -58,10 +58,12 @@
                                             <span class="um" ng-if="input.um">{{::input.um}}</span>
                                         </div>
                                     </div>
-                                    <div ng-switch-when="select">
+                                    <div ng-switch-when="select" class="input-adjust">
+                                        <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
                                         <select class="form-control" ng-model="input.value">
                                             <option ng-repeat="option in input.options" ng-if="!option.hide" value="{{option.value}}">{{option.label}}</option>
                                         </select>
+                                        <span class="um" ng-if="input.um">{{::input.um}}</span>
                                     </div>
                                     <div ng-switch-when="checkbox">
                                         <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
@@ -80,24 +82,15 @@
         </div>
         <div class="main-container">
             <div class="main-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sagittis est, eget elementum felis. Etiam consectetur velit quam, sit amet laoreet sem faucibus sed. Sed diam magna, mattis at egestas nec, rhoncus vel nisl. Integer porta
-                    mauris efficitur, auctor odio id, pretium nunc. Aliquam eu ante quis velit accumsan laoreet ac nec elit. Fusce gravida, augue ut interdum varius, neque purus bibendum lectus, vitae tempus nunc felis in tortor. Proin at blandit velit.
-                    Aliquam id libero in tellus dignissim vestibulum. Sed suscipit eget libero quis maximus. Aenean laoreet arcu orci, in convallis ante commodo non. Nulla ac ornare lacus, a rutrum justo. Donec vel enim faucibus, venenatis nulla vitae,
-                    vulputate justo. Integer a erat eget arcu sodales pretium at vel velit. Cras bibendum pharetra nulla. Donec ullamcorper sapien eu massa viverra aliquam. Donec finibus ex vel egestas vulputate. Nulla facilisi. Ut scelerisque molestie
-                    lectus vitae finibus. Pellentesque dictum, libero laoreet euismod convallis, erat eros ultrices nisi, sed blandit felis justo vel tellus. Suspendisse pretium laoreet rhoncus. Vestibulum ac nibh mattis, scelerisque enim eget, congue
-                    magna. Etiam sit amet tempor mauris, gravida sollicitudin nisi. Etiam fermentum porttitor dolor. Fusce eget sem eu mauris tempus finibus sit amet quis elit. Vivamus ut purus quis felis iaculis suscipit. Quisque pulvinar augue sed velit
-                    maximus suscipit. Pellentesque tincidunt leo ac nunc ultrices, quis tristique libero malesuada. Nunc dignissim leo vitae tellus posuere, ac convallis eros faucibus. Nulla facilisi. Ut cursus nec dui at pharetra. Donec et risus nisi.
-                    Donec felis eros, tempor eget velit nec, rhoncus aliquet odio. Morbi in ipsum condimentum, maximus lorem vel, venenatis dolor. Quisque enim ante, ultrices ut vestibulum eget, aliquam malesuada lorem. Aliquam a vehicula metus. Integer
-                    a est ac magna luctus ultricies. Vestibulum lobortis nulla et ipsum placerat, sed cursus velit luctus. Etiam quis lorem vel dolor aliquam volutpat ut quis tortor. Praesent feugiat, ipsum eget varius vestibulum, lacus nibh fermentum
-                    magna, ut efficitur ex ex et tellus. Aenean aliquet vel neque id feugiat. Pellentesque placerat, nisl eu lobortis vehicula, lorem sapien luctus tortor, ut malesuada sapien libero vel tellus. Etiam quis aliquam ipsum. Sed ut varius
-                    lorem. Mauris molestie, ex eget tincidunt euismod, orci mi aliquet purus, quis tincidunt lorem quam et diam. Fusce pellentesque risus vel mauris lobortis, ut convallis tortor aliquet. Vivamus at sodales purus, nec congue tellus. In
-                    fermentum imperdiet turpis, id volutpat nulla mattis a. Aliquam erat volutpat. Vestibulum ultrices augue sapien, at accumsan erat aliquam non. Morbi eu tincidunt ligula. Donec rhoncus lectus semper diam luctus, at consequat felis mattis.
-                    Integer sit amet purus eu nunc varius condimentum. Aliquam est mauris, ultricies a nisi vel, cursus faucibus ex. Ut hendrerit arcu vel orci rhoncus convallis. Maecenas id urna dui. Nunc nec ante ut odio luctus molestie vitae ut tellus.
-                    Nam nunc ligula, condimentum vitae vestibulum at, vestibulum non elit. Duis posuere elementum tortor ac bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac congue nibh. Sed quis pharetra metus. Phasellus tempor
-                    rhoncus nisl, non porta nulla sodales id. In hac habitasse platea dictumst. Sed interdum eros ac egestas consectetur. Nam a eros id mi condimentum sodales. Nullam a porttitor libero. Nullam et diam non purus ultrices lacinia. Orci
-                    varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent feugiat tempus nisl eleifend tempus. Sed rhoncus auctor mi non molestie.</p>
-
-                <button ng-click="printPdf()">Print</button>
+                <div class="main-header row">
+                    <h2 class="center reset bold">Estabilidade Externa</h2>
+                </div>
+                <html-include src="templates/empuxo.html"></html-include>
+                <html-include src="templates/deslizamento.html"></html-include>
+                <html-include src="templates/tombamento.html"></html-include>
+                <html-include src="templates/tensoes.html"></html-include>
+                <html-include src="templates/capacidadeCarga.html"></html-include>
+                <button ng-show="!isPrinting" ng-click="printPdf()">Print</button>
 
                 <footer class="footer-main">
                     {{::CONSTANTS.COPYRIGHT}}
@@ -110,6 +103,7 @@
     <script type="text/javascript " src="assets/js/core.js "></script>
     <script type="text/javascript " src="assets/js/angular/app.js "></script>
     <script type="text/javascript " src="assets/js/angular/controller/esrgController.js "></script>
+    <script type="text/javascript " src="assets/js/angular/directive/includeDirective.js "></script>
 </body>
 
 </html>

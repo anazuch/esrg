@@ -203,3 +203,121 @@ h4 {
 .flex .multiply {
     padding: 5px;
 }
+
+.left {
+    float: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.reset {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.m-l-20 {
+    margin-left: 20px;
+}
+
+.m-l-5 {
+    margin-left: 5px;
+}
+
+.m-r-5 {
+    margin-right: 5px;
+}
+
+.main-content {
+    padding: 0px
+}
+
+.bold {
+    font-weight: 400;
+}
+
+.root-container {
+    text-align: center;
+    clear: both;
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+    margin: 5px 0px;
+    border-left: 1px solid #dedede;
+}
+
+.root-container .top {
+    clear: both;
+    border-bottom: 1px solid #909090;
+    position: relative;
+}
+
+.root-container .inner-root {
+    border-top: 2px solid #909090;
+    display: inline;
+    padding: 0px 3px;
+}
+
+.root-container .root-calc:before {
+    content: "√";
+    color: #909090;
+    display: inline;
+    top: -6px;
+    position: absolute;
+    font-size: 40px;
+    left: 1px;
+}
+
+.root-container .bottom {
+    display: inline;
+}
+
+.root-container .root-calc {
+    padding-left: 22px;
+    position: relative;
+}
+
+.root-container .vertical-middle {
+    margin-top: 9px;
+}
+
+.root-container .vertical-point-middle {
+    margin-top: 7px;
+}
+
+.root-container .vertical-top-middle {
+    margin-top: 0px;
+    margin-left: -3px;
+    font-size: 9px;
+}
+
+.root-container .right-container {
+    margin-left: 5px;
+}
+
+.root-container .left-container {
+    margin-right: 5px;
+}
+
+.relt-box {
+    padding: 25px 25px 0 25px;
+}
+
+.relt-title {
+    display: flex;
+    position: relative;
+}
+
+.relt-title:before {
+    content: "*";
+    color: #ce0300;
+    font-size: 33px;
+    position: absolute;
+    top: -5px;
+}
+
+.relt-title h3 {
+    padding-left: 15px;
+    font-weight: 400;
+}
