@@ -9,6 +9,7 @@
     height: 25px;
     text-align: right;
     padding-right: 3px;
+    padding-top: 0px;
 }
 
 .input-adjust .form-control:focus {
@@ -172,6 +173,17 @@ h4 {
     width: 842px;
 }
 
+.custom-table {
+    max-width: 800px;
+}
+
+.custom-table th {
+    font-size: 12px !important;
+    text-transform: none !important;
+    vertical-align: middle !important;
+    text-align: center;
+}
+
 .input-check {
     width: auto;
     float: left;
@@ -230,7 +242,8 @@ h4 {
 }
 
 .main-content {
-    padding: 0px
+    padding: 0px;
+    width: 842px;
 }
 
 .bold {
@@ -244,7 +257,6 @@ h4 {
     width: 100%;
     font-weight: 400;
     margin: 5px 0px;
-    border-left: 1px solid #dedede;
 }
 
 .root-container .top {
@@ -330,6 +342,10 @@ key {
     text-align: left;
 }
 
+key.size-3 {
+    width: 30px;
+}
+
 key.size-2 {
     width: 24px;
 }
@@ -344,4 +360,54 @@ idx {
     font-size: 10px;
     margin-left: 1px;
     position: absolute;
+}
+
+sup {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 10px;
+    margin-left: 1px;
+    position: absolute;
+}
+
+large {
+    display: inline-block;
+    font-size: 33px;
+    line-height: 22px;
+    font-weight: 100;
+}
+
+.m-r-n4 {
+    margin-right: -4px !important;
+}
+
+.m-r-0 {
+    margin-right: 0px !important;
+}
+
+.vertical-large-middle {
+    margin-top: 17px;
+}
+
+.adjust-inner-root {
+    float: left;
+    margin-top: -1px;
+}
+
+.b-0 {
+    border: 0px !important;
+}
+
+.adjust-top {
+    display: inline-block;
+    clear: both;
+}
+
+.adjust-bottom {
+    display: inherit !important;
+    margin-top: -5px;
+}
+
+.m-t-31 {
+    margin-top: 31px !important;
 }

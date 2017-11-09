@@ -82,7 +82,7 @@
         </div>
         <div class="main-container">
             <div class="main-content">
-                <div class="main-header row">
+                <div class="row">
                     <h2 class="center reset bold">Estabilidade Externa</h2>
                 </div>
                 <html-include src="templates/empuxo.html"></html-include>
@@ -90,6 +90,13 @@
                 <html-include src="templates/tombamento.html"></html-include>
                 <html-include src="templates/tensoes.html"></html-include>
                 <html-include src="templates/capacidadeCarga.html"></html-include>
+                <div class="row">
+                    <h2 class="center reset bold">Estabilidade Interna</h2>
+                </div>
+                <html-include src="templates/formulasTable1Line1.html"></html-include>
+                <html-include src="templates/formulasTable1Line2.html"></html-include>
+                <html-include src="templates/formulasTable1Line3.html"></html-include>
+                <html-include src="templates/table1.html"></html-include>
                 <button ng-show="!isPrinting" ng-click="printPdf()">Print</button>
 
                 <footer class="footer-main">
