@@ -97,7 +97,11 @@
                 <html-include src="templates/formulasTable1Line2.html"></html-include>
                 <html-include src="templates/formulasTable1Line3.html"></html-include>
                 <html-include src="templates/table1.html"></html-include>
+                <html-include src="templates/table2.html"></html-include>
+                <html-include src="templates/table3.html"></html-include>
+
                 <button ng-show="!isPrinting" ng-click="printPdf()">Print</button>
+                <button ng-show="!isPrinting" ng-click="calc()">Calc</button>
 
                 <footer class="footer-main">
                     {{::CONSTANTS.COPYRIGHT}}
@@ -108,6 +112,8 @@
 
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script type="text/javascript " src="assets/js/core.js "></script>
+    <script type="text/javascript " src="assets/js/control.js "></script>
+    <script type="text/javascript " src="assets/js/calc/empuxo.js "></script>
     <script type="text/javascript " src="assets/js/angular/app.js "></script>
     <script type="text/javascript " src="assets/js/angular/controller/esrgController.js "></script>
     <script type="text/javascript " src="assets/js/angular/directive/includeDirective.js "></script>

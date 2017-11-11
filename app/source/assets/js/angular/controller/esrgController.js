@@ -103,6 +103,10 @@
             });
         }
 
+        $scope.calc = function() {
+            core.control.init($scope.data);
+        }
+
         var _currentCompactor = "";
 
         function _loadCompactadorData(type) {

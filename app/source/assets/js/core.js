@@ -8,6 +8,8 @@ const appPath = remote.app.getAppPath();
 (function() {
     var core = (function() {
 
+        let _objData = {};
+
         let _pathMap = {
             'dataDefinition': 'source/assets/data/dataDefinition.json',
             'abacos': 'source/assets/data/abacos.json',
@@ -21,6 +23,21 @@ const appPath = remote.app.getAppPath();
             return path;
         }
 
+        function setObjectValues(obj) {
+            _objData = obj;
+        }
+
+        function getValue(key) {
+            var splittedKey = key.split('.');
+            if (splittedKey.length == 2) {
+                var container = _objData[splittedKey[0]];
+                if (container) {
+                    var obj = container.inputs[splittedKey[1]];
+                    return obj.value;
+                }
+            }
+        }
+
         function cloneValues(obj1, obj2, property) {
             _.forEach(obj1, function(data, key) {
                 if (obj2[key]) {
@@ -31,7 +48,9 @@ const appPath = remote.app.getAppPath();
 
         return {
             cloneValues,
-            getPath
+            getPath,
+            setObjectValues,
+            getValue
         }
     })();
 
