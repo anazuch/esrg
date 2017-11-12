@@ -3,7 +3,7 @@
         "title": "Geometria do Muro",
         "inputs": {
             "alturaMuro": {
-                "value": "",
+                "value": 5.4,
                 "symbol": "h",
                 "um": "m",
                 "type": "number",
@@ -13,7 +13,7 @@
                 ]
             },
             "sobrecarga": {
-                "value": "",
+                "value": 0,
                 "symbol": "q",
                 "um": "kN/m²",
                 "type": "number",
@@ -23,7 +23,7 @@
                 ]
             },
             "espacamentoVertical": {
-                "value": "",
+                "value": 0.6,
                 "symbol": "Sv",
                 "um": "m",
                 "type": "number",
@@ -33,17 +33,17 @@
                 ]
             },
             "espacamentoHorizontal": {
-                "value": "",
+                "value": 1,
                 "symbol": "Sh",
                 "um": "m",
                 "type": "number",
-                "label": "Espaçamento vertical dos reforços",
+                "label": "Espaçamento horizontal dos reforços",
                 "info": [
                     "Esse valor será constante em todo o muro"
                 ]
             },
             "embutimento": {
-                "value": "",
+                "value": 0.4,
                 "symbol": "D",
                 "um": "m",
                 "type": "number",
@@ -52,19 +52,8 @@
                     "Deve ser ≥ 0.4m a favor da segurança"
                 ]
             },
-            "alturaFinal": {
-                "value": "",
-                "symbol": "h",
-                "um": "m",
-                "type": "number",
-                "disabled": true,
-                "label": "Altura final",
-                "info": [
-                    "Altura + sobrecarga"
-                ]
-            },
             "inclinacaoFace": {
-                "value": "",
+                "value": 90,
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -83,7 +72,7 @@
         "title": "Parâmetros do Solo de enchimento",
         "inputs": {
             "tipoSolo": {
-                "value": "",
+                "value": "areia",
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -98,7 +87,7 @@
                 ]
             },
             "pesoEspecifico": {
-                "value": "",
+                "value": 18,
                 "symbol": "γ",
                 "um": "kN/m³",
                 "type": "number",
@@ -106,7 +95,7 @@
                 "info": []
             },
             "coesao": {
-                "value": "",
+                "value": 10,
                 "symbol": "c'",
                 "um": "kPa",
                 "type": "number",
@@ -114,7 +103,7 @@
                 "info": []
             },
             "anguloAtrito": {
-                "value": "",
+                "value": 35,
                 "symbol": "∅'",
                 "um": "°",
                 "type": "select",
@@ -126,7 +115,7 @@
                 ]
             },
             "moduloTangenteInicial": {
-                "value": "",
+                "value": 128,
                 "symbol": "k",
                 "um": "",
                 "type": "number",
@@ -134,7 +123,7 @@
                 "info": []
             },
             "moduloExpoente": {
-                "value": "",
+                "value": 0.78,
                 "symbol": "n",
                 "um": "",
                 "type": "number",
@@ -147,7 +136,7 @@
         "title": "Parâmetros do Solo de Fundação",
         "inputs": {
             "igualAEnchimento": {
-                "value": false,
+                "value": true,
                 "symbol": "",
                 "um": "",
                 "type": "checkbox",
@@ -155,6 +144,14 @@
                 "info": [
                     "Ao selecionar será clonado os dados do solo de enchimento"
                 ]
+            },
+            "apoiadoRocha": {
+                "value": true,
+                "symbol": "",
+                "um": "",
+                "type": "checkbox",
+                "label": "Apoiado em rocha",
+                "info": []
             },
             "tipoSolo": {
                 "value": "",
@@ -221,7 +218,7 @@
         "title": "Parâmetros do reforços",
         "inputs": {
             "tipoGeossintetico": {
-                "value": "",
+                "value": "geogrelhaPoliaramida",
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -234,7 +231,7 @@
                 ]
             },
             "tipoReforco": {
-                "value": "",
+                "value": 40,
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -245,7 +242,7 @@
                 ]
             },
             "si": {
-                "value": "",
+                "value": 0.4,
                 "symbol": "Si",
                 "um": "",
                 "type": "number",
@@ -256,15 +253,15 @@
                 ]
             },
             "resistenciaTracao": {
-                "value": "",
+                "value": 35,
                 "symbol": "T",
                 "um": "kN/m²",
                 "type": "number",
                 "label": "Resistência à tração",
                 "info": []
             },
-            "modResistenciaTracao": {
-                "value": "",
+            "modRigidezTracao": {
+                "value": 700,
                 "symbol": "Jr",
                 "um": "kN/m",
                 "type": "number",
@@ -284,9 +281,9 @@
                 "layout": "multi",
                 "label": "",
                 "inputs": [
-                    { "key": "largura", "value": "" },
-                    { "key": "altura", "value": "" },
-                    { "key": "comprimento", "value": "" }
+                    { "key": "largura", "value": 15 },
+                    { "key": "altura", "value": 20 },
+                    { "key": "comprimento", "value": 19 }
                 ]
             }
         }
@@ -295,7 +292,7 @@
         "title": "Parâmetros da compactação",
         "inputs": {
             "tipo": {
-                "value": "",
+                "value": "rolo",
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -307,7 +304,7 @@
                 ]
             },
             "modelos": {
-                "value": "",
+                "value": "CASE SV2016",
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -315,7 +312,7 @@
                 "fileAssociation": "tiposCompactadores"
             },
             "pesoRolo": {
-                "value": "",
+                "value": 99.5,
                 "symbol": "",
                 "um": "kN",
                 "type": "number",
@@ -323,7 +320,7 @@
                 "info": []
             },
             "cargaEstatica": {
-                "value": "",
+                "value": 325,
                 "symbol": "",
                 "um": "kN",
                 "type": "number",
@@ -331,7 +328,7 @@
                 "info": []
             },
             "larguraRolo": {
-                "value": "",
+                "value": 2.2,
                 "symbol": "",
                 "um": "m",
                 "type": "number",

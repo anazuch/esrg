@@ -2,7 +2,12 @@
     var control = (function() {
 
         function _execute() {
-            core.empuxo.init();
+            core.empuxo.execute();
+            core.deslizamento.execute();
+            core.tombamento.execute();
+            core.tensoesBase.execute();
+            core.capacidadeCarga.execute();
+            console.log(core.resultData);
         }
 
         function init(obj) {

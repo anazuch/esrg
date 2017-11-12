@@ -7,15 +7,16 @@ const appPath = remote.app.getAppPath();
 
 (function() {
     var core = (function() {
-
+        let resultData = {};
         let _objData = {};
+        let data = {};
 
         let _pathMap = {
             'dataDefinition': 'source/assets/data/dataDefinition.json',
             'abacos': 'source/assets/data/abacos.json',
             'fatoresCapacidadeCarga': 'source/assets/data/fatoresCapacidadeCarga.json',
             'tiposCompactadores': 'source/assets/data/tiposCompactadores.json',
-            'tiposReforcos': 'source/assets/data/tiposReforcos.json',
+            'tiposReforcos': 'source/assets/data/tiposReforcos.json'
         }
 
         function getPath(key) {
@@ -25,6 +26,10 @@ const appPath = remote.app.getAppPath();
 
         function setObjectValues(obj) {
             _objData = obj;
+        }
+
+        function convertAngleToRadian(value) {
+            return (value * Math.PI) / 180;
         }
 
         function getValue(key) {
@@ -50,7 +55,10 @@ const appPath = remote.app.getAppPath();
             cloneValues,
             getPath,
             setObjectValues,
-            getValue
+            getValue,
+            resultData,
+            convertAngleToRadian,
+            data
         }
     })();
 
