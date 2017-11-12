@@ -8,7 +8,7 @@
 
         function _calculateTombamento() {
             var fs = 2;
-            var calculatedValue = (fs * (core.resultData.h * core.resultData.h) * core.resultData.ka) / 3;
+            var calculatedValue = (fs * Math.pow(core.resultData.h, 2) * core.resultData.ka) / 3;
             core.resultData.tombamento = Math.sqrt(calculatedValue);
         }
 

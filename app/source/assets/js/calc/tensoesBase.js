@@ -8,7 +8,7 @@
 
         function _calculateTensoesBase() {
             var fs = _getFs();
-            var calculatedValue = ((core.resultData.h * core.resultData.h) * core.resultData.ka) / (6 * fs);
+            var calculatedValue = (Math.pow(core.resultData.h, 2) * core.resultData.ka) / (6 * fs);
             core.resultData.tensoesBase = Math.sqrt(calculatedValue);
         }
 

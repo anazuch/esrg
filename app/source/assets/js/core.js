@@ -14,7 +14,6 @@ const appPath = remote.app.getAppPath();
         let _pathMap = {
             'dataDefinition': 'source/assets/data/dataDefinition.json',
             'abacos': 'source/assets/data/abacos.json',
-            'fatoresCapacidadeCarga': 'source/assets/data/fatoresCapacidadeCarga.json',
             'tiposCompactadores': 'source/assets/data/tiposCompactadores.json',
             'tiposReforcos': 'source/assets/data/tiposReforcos.json'
         }
@@ -74,3 +73,7 @@ Object.defineProperty(window, 'CONSTANTS', {
     })(),
     writable: false
 });
+
+Math.cot = function(value) {
+    return 1 / Math.tan(value);
+};

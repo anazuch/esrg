@@ -32,7 +32,7 @@
 
         function _calculateEmpuxo() {
             var pesoEspecifico = core.getValue("soloEnchimento.pesoEspecifico");
-            var calculatedValue = pesoEspecifico * (core.resultData.h * core.resultData.h) * core.resultData.ka * 0.5;
+            var calculatedValue = pesoEspecifico * Math.pow(core.resultData.h, 2) * core.resultData.ka * 0.5;
             core.resultData.empuxo = calculatedValue;
         }
 
