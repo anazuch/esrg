@@ -32,6 +32,10 @@
                 _compactorData = data;
             });
 
+            jsonfile.readFile(core.getPath('abacos'), function(err, data) {
+                core.abacos = data;
+            });
+
         }
 
         $scope.printPdf = function() {
@@ -103,10 +107,16 @@
                 }
             });
         }
-
+        $scope.calculated = false;
         $scope.calc = function() {
+            $scope.inLoading = true;
             core.control.init($scope.data);
+            $scope.resultData = core.resultData;
+            $scope.calculated = true;
+            $scope.inLoading = false;
         }
+
+        $scope.round = core.round;
 
         var _currentCompactor = "";
 

@@ -1,6 +1,6 @@
 <div class="row relt-box">
     <div class="relt-title">
-        <h3>Fatores de segurança da tesistência ao arrancamento</h3>
+        <h3>Fatores de segurança da resistência ao arrancamento</h3>
     </div>
     <div class="root-container">
         <table class="table table-bordered custom-table">
@@ -21,7 +21,22 @@
                 </tr>
             </thead>
             <tbody>
-
+                <tr ng-repeat="result in resultData.fsArrancamento">
+                    <td>{{::result.camada}}</td>
+                    <td>{{::result.z}}</td>
+                    <td>{{round(result.le)}}</td>
+                    <td>{{round(result.tensaoVertical)}}</td>
+                    <td>{{round(result.resistenciaArrancamento)}}</td>
+                    <td>{{round(result.tmax)}}</td>
+                    <td>{{round(result.fs)}}</td>
+                    <td>
+                        <text class="red" ng-if="!result.verificacao">
+                            Redimensionar 
+                        </text>
+                        <text class="green" ng-if="result.verificacao">
+                            OK 
+                        </text>
+                </tr>
             </tbody>
         </table>
     </div>

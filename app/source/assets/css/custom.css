@@ -182,6 +182,7 @@ h4 {
     text-transform: none !important;
     vertical-align: middle !important;
     text-align: center;
+    background-color: #f3f3f3;
 }
 
 .input-check {
@@ -410,4 +411,23 @@ large {
 
 .m-t-31 {
     margin-top: 31px !important;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.adjust-button {
+    margin: 0 auto;
+    width: 150px;
+    margin-bottom: 15px;
+    display: block;
 }

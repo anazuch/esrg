@@ -215,7 +215,7 @@
         }
     },
     "reforcos": {
-        "title": "Parâmetros do reforços",
+        "title": "Parâmetros dos reforços",
         "inputs": {
             "tipoGeossintetico": {
                 "value": "geogrelhaPoliaramida",
@@ -352,6 +352,33 @@
                 "type": "number",
                 "label": "Tensão vertical",
                 "info": []
+            }
+        }
+    },
+    "arrancamento": {
+        "title": "Parâmetros análise arrancamento",
+        "inputs": {
+            "aderencia": {
+                "value": 0.8,
+                "symbol": "fa",
+                "um": "",
+                "type": "number",
+                "label": "Coeficiente de aderência",
+                "info": [
+                    "Geogrelha - 0.8 a 1",
+                    "Depende da abertura da malha e espessura dos membros transversais"
+                ]
+            },
+            "escala": {
+                "value": 0.7,
+                "symbol": "𝛼",
+                "um": "",
+                "type": "number",
+                "label": "Fator de escala",
+                "info": [
+                    "Geogrelha - 0.7 a 1",
+                    "Na ausência de ensaios de arrancamento, adote 𝛼 igual a 0.6"
+                ]
             }
         }
     }

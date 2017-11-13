@@ -42,6 +42,10 @@ const appPath = remote.app.getAppPath();
             }
         }
 
+        function round(value) {
+            return Math.round10(value, -2);
+        }
+
         function cloneValues(obj1, obj2, property) {
             _.forEach(obj1, function(data, key) {
                 if (obj2[key]) {
@@ -57,7 +61,8 @@ const appPath = remote.app.getAppPath();
             getValue,
             resultData,
             convertAngleToRadian,
-            data
+            data,
+            round
         }
     })();
 

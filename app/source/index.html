@@ -79,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            <button class="btn btn-primary w-100" ng-click="calc()">Calcular</button>
         </div>
         <div class="main-container">
             <div class="main-content">
@@ -100,8 +101,9 @@
                 <html-include src="templates/table2.html"></html-include>
                 <html-include src="templates/table3.html"></html-include>
 
-                <button ng-show="!isPrinting" ng-click="printPdf()">Print</button>
-                <button ng-show="!isPrinting" ng-click="calc()">Calc</button>
+                <div class="row">
+                    <button ng-show="!isPrinting && calculated" class="btn btn-primary adjust-button" ng-click="printPdf()">Print</button>
+                </div>
 
                 <footer class="footer-main">
                     {{::CONSTANTS.COPYRIGHT}}

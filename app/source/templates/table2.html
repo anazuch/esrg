@@ -66,7 +66,24 @@
                 </tr>
             </thead>
             <tbody>
-
+                <tr ng-repeat="result in resultData.segundaInteracao">
+                    <td>{{::result.camada}}</td>
+                    <td>{{::result.z}}</td>
+                    <td>{{round(result.lr)}}</td>
+                    <td>{{round(result.jr)}}</td>
+                    <td>{{round(result.si)}}</td>
+                    <td>{{round(result.tensaoVertical)}}</td>
+                    <td>{{round(result.compactacao)}}</td>
+                    <td>{{round(result.tensaoAtuante)}}</td>
+                    <td>{{round(result.relacaoTensao)}}</td>
+                    <td>{{round(result.relacaoTensaoAdotado)}}</td>
+                    <td>{{round(result.relacaoCoesao)}}</td>
+                    <td>{{round(result.relacaoCoesaoAdotada)}}</td>
+                    <td>{{round(result.beta)}}</td>
+                    <td>{{round(result.betaAdotado)}}</td>
+                    <td>{{round(result.abaco)}}</td>
+                    <td>{{round(result.tmax)}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
