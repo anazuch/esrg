@@ -28,6 +28,7 @@
             });
 
             jsonfile.readFile(core.getPath('tiposCompactadores'), function(err, data) {
+                core.compactorData = data;
                 _compactorData = data;
             });
 

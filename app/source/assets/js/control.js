@@ -7,6 +7,7 @@
             core.tombamento.execute();
             core.tensoesBase.execute();
             core.capacidadeCarga.execute();
+            core.estabilidadeInterna.execute();
             console.log(core.resultData);
         }
 

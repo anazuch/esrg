@@ -12,6 +12,7 @@
             _calculateFyi();
             _calculateFci();
             _calculateQlim();
+            _calculateFS();
         }
 
         function _calculateLe() {
@@ -73,6 +74,10 @@
             calculatedValue = calculatedValue + (y * d * (_getNq() - 1) * core.resultData.fqi);
             calculatedValue = calculatedValue + (0.5 * y * core.resultData.b * _getNy() * core.resultData.fyi);
             core.resultData.qlim = calculatedValue;
+        }
+
+        function _calculateFS() {
+            core.resultData.fs = core.resultData.qlim / core.resultData.capacidadeCarga;
         }
 
         function _getNc() {

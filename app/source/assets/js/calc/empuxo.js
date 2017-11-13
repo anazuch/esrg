@@ -20,7 +20,7 @@
             var anguloAtrito = core.getValue("soloEnchimento.anguloAtrito");
             var angle = 45 - (anguloAtrito / 2);
             var tangent = Math.tan(core.convertAngleToRadian(angle));
-            core.resultData.ka = tangent * tangent;
+            core.resultData.ka = Math.pow(tangent, 2);
         }
 
         function _calculateH() {
