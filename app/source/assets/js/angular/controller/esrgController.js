@@ -21,6 +21,7 @@
                 }
                 $timeout(() => {
                     $scope.data = data;
+                    core.data = data;
                     $scope.inLoading = false;
                     _bindListeners();
                     _loadTipoReforcos();
@@ -77,6 +78,11 @@
                 $scope.data.compactacao.inputs.tensao.hide = true;
                 $scope.data.compactacao.inputs.pesoRolo.hide = true;
 
+                $scope.data.compactacao.inputs.area.value = 0;
+                $scope.data.compactacao.inputs.tensao.value = 0;
+                $scope.data.compactacao.inputs.larguraRolo.value = 0;
+                $scope.data.compactacao.inputs.pesoRolo.value = 0;
+                $scope.data.compactacao.inputs.cargaEstatica.value = 0;
                 if (_.isEqual(value, 'placa')) {
                     $scope.data.compactacao.inputs.area.hide = false;
                     $scope.data.compactacao.inputs.tensao.hide = false;
@@ -107,6 +113,7 @@
                 }
             });
         }
+
         $scope.calculated = false;
         $scope.calc = function() {
             $scope.inLoading = true;
@@ -114,6 +121,10 @@
             $scope.resultData = core.resultData;
             $scope.calculated = true;
             $scope.inLoading = false;
+        }
+
+        $scope.inputChange = function() {
+            $scope.calculated = false;
         }
 
         $scope.round = function(value) {

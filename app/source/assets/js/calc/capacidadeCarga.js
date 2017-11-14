@@ -60,7 +60,7 @@
 
         function _calculateFci() {
             var anguloAtrito = core.getValue("soloFundacao.anguloAtrito");
-            var divisor = _getNc() * Math.tan(core.convertAngleToRadian(anguloAtrito));
+            var divisor = getNc() * Math.tan(core.convertAngleToRadian(anguloAtrito));
             var calculatedValue = core.resultData.fqi - ((1 - core.resultData.fqi) / divisor);
             core.resultData.fci = calculatedValue;
         }
@@ -69,9 +69,9 @@
             var y = core.getValue("soloFundacao.pesoEspecifico");
             var d = core.getValue("geometriaMuro.embutimento");
             var c = core.getValue("soloFundacao.coesao");
-            var calculatedValue = y * d + (c * _getNc() * core.resultData.fci);
-            calculatedValue = calculatedValue + (y * d * (_getNq() - 1) * core.resultData.fqi);
-            calculatedValue = calculatedValue + (0.5 * y * core.resultData.b * _getNy() * core.resultData.fyi);
+            var calculatedValue = y * d + (c * getNc() * core.resultData.fci);
+            calculatedValue = calculatedValue + (y * d * (getNq() - 1) * core.resultData.fqi);
+            calculatedValue = calculatedValue + (0.5 * y * core.resultData.b * getNy() * core.resultData.fyi);
             core.resultData.qlim = calculatedValue;
         }
 
@@ -79,7 +79,7 @@
             core.resultData.fs = core.resultData.qlim / core.resultData.capacidadeCarga;
         }
 
-        function _getNc() {
+        function getNc() {
             var anguloAtrito = core.getValue("soloFundacao.anguloAtrito");
             if (anguloAtrito == 30) {
                 return 30.14;
@@ -87,7 +87,7 @@
             return 46.12;
         }
 
-        function _getNq() {
+        function getNq() {
             var anguloAtrito = core.getValue("soloFundacao.anguloAtrito");
             if (anguloAtrito == 30) {
                 return 18.4;
@@ -95,7 +95,7 @@
             return 33.30;
         }
 
-        function _getNy() {
+        function getNy() {
             var anguloAtrito = core.getValue("soloFundacao.anguloAtrito");
             if (anguloAtrito == 30) {
                 return 22.4;
@@ -104,7 +104,10 @@
         }
 
         return {
-            execute
+            execute,
+            getNc,
+            getNq,
+            getNy
         }
     })();
 

@@ -3,7 +3,7 @@
         <h3>Capacidade de carga da fundação</h3>
     </div>
     <div class="root-container">
-        <div class="col-lg-3 col-md-3">
+        <div class="col-lg-3 col-md-3 col-lg-3">
             <div class="left-container vertical-middle left">
                 <key>
                     L
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div ng-if="calculated">
-            <div class="col-lg-2 col-md-3">
+            <div class="col-lg-3 col-md-3 col-lg-3">
                 <div class="left-container vertical-middle left">
                     <key>
                         L
@@ -22,7 +22,7 @@
                     = 0,8 . {{round(core.resultData.h)}}
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 result">
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
                 <div class="left-container vertical-middle left">
                     <key>
                         L
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3 col-md-3">
+        <div class="col-lg-3 col-md-3 col-lg-3">
             <div class="left-container vertical-middle left">
                 <key class="size-2">
                     𝜎
@@ -76,7 +76,7 @@
             <div class="right-container vertical-middle left">FS</div>
         </div>
         <div ng-if="calculated">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-lg-4">
                 <div class="left-container vertical-middle left">
                     <key class="size-2">
                         𝜎
@@ -112,7 +112,7 @@
                 <div class="right-container vertical-point-middle left">.</div>
                 <div class="right-container vertical-middle left">2.5</div>
             </div>
-            <div class="col-lg-2 col-md-3 result">
+            <div class="col-lg-2 col-md-3  col-lg-4 result">
                 <div class="left-container vertical-middle left">
                     <key class="size-2">
                         𝜎
@@ -123,7 +123,7 @@
         </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-lg-3">
             <div class="left-container vertical-middle left">e = </div>
             <div class="left">
                 <div class="top">
@@ -134,16 +134,39 @@
                 </div>
                 <div class="bottom">6 . Lr</div>
             </div>
-            <div class="right-container vertical-point-middle left">.</div>
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3 col-lg-3">
+                <div class="left-container vertical-middle left">e = </div>
+                <div class="left">
+                    <div class="top">
+                        {{round(core.resultData.ka)}} . {{round(Math.pow(core.resultData.h, 2))}}
+                    </div>
+                    <div class="bottom">6 . {{round(core.resultData.le)}}</div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    e = {{round(core.resultData.e)}}
+                </div>
+            </div>
         </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
-            <div class="left-container vertical-middle left">B' = Lr - (2 . e) </div>
+        <div class="col-lg-3 col-md-3 col-lg-3 ">
+            <div class="left-container left">B' = Lr - (2 . e) </div>
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3 col-lg-3">
+                <div class="left-container left">B' = {{round(core.resultData.le)}} - (2 . {{round(core.resultData.e)}}) </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
+                <div class="left-container left">B' = {{round(core.resultData.b)}} </div>
+            </div>
         </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-lg-4">
             <div class="left-container vertical-middle left">
                 <key class="size-1">
                     f
@@ -175,9 +198,44 @@
             </div>
             <div class="left-container left">²</div>
         </div>
+        <div ng-if="calculated">
+            <div class="col-lg-4 col-md-4 col-lg-4">
+                <div class="left-container vertical-middle left">
+                    <key class="size-1">
+                        f
+                        <idx>qi</idx>
+                    </key>=
+                </div>
+                <div class="vertical-middle left">
+                    <large>[</large>
+                </div>
+                <div class="left-container vertical-middle left">
+                    1 -
+                </div>
+                <div class="left">
+                    <div class="top">
+                        {{round(core.resultData.empuxo)}}
+                    </div>
+                    <div class="bottom">
+                        {{round(core.resultData.rv)}} + {{round(core.resultData.b)}} . {{round(core.getValue("soloFundacao.coesao"))}} . {{round(Math.cot(core.convertAngleToRadian(core.getValue("soloFundacao.anguloAtrito"))))}}</div>
+                </div>
+                <div class="vertical-middle left">
+                    <large>]</large>
+                </div>
+                <div class="left-container left">²</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
+                <div class="left-container vertical-middle left">
+                    <key class="size-1">
+                        f
+                        <idx>qi</idx>
+                    </key>= {{round(core.resultData.fqi)}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-lg-3 ">
             <div class="left-container vertical-middle left">
                 <key>
                     f
@@ -195,9 +253,33 @@
                 </div>
             </div>
         </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3 col-lg-3 ">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        f
+                        <idx>𝛾i</idx>
+                    </key>
+                    = ({{round(core.resultData.fqi)}})</div>
+                <div class="vertical-top-middle left">
+                    <div class="left">
+                        <div class="top">3</div>
+                        <div class="bottom">2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        f
+                        <idx>𝛾i</idx>
+                    </key> = {{round(core.resultData.fyi)}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-lg-3">
             <div class="left-container vertical-middle left">
                 <key class="size-1">
                     f
@@ -207,7 +289,8 @@
                     f
                     <idx>qi</idx>
                 </key>
-                -</div>
+                -
+            </div>
             <div class="left">
                 <div class="top">1 -
                     <key class="size-1">
@@ -223,9 +306,34 @@
                 </div>
             </div>
         </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3 col-lg-3">
+                <div class="left-container vertical-middle left">
+                    <key class="size-1">
+                        f
+                        <idx>ci</idx>
+                    </key> = {{round(core.resultData.fqi)}} -
+                </div>
+                <div class="left">
+                    <div class="top">1 - {{round(core.resultData.fqi)}}
+                    </div>
+                    <div class="bottom">
+                        {{round(core.capacidadeCarga.getNc())}} . {{round(Math.tan(core.convertAngleToRadian(core.getValue("soloFundacao.anguloAtrito"))))}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
+                <div class="left-container vertical-middle left">
+                    <key class="size-1">
+                        f
+                        <idx>ci</idx>
+                    </key> = {{round(core.resultData.fci)}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-lg-12">
             <div class="left-container vertical-middle left">
                 <key class="size-2">
                     q
@@ -267,8 +375,29 @@
             </div>
         </div>
     </div>
+    <div class="root-container" ng-if="calculated">
+        <div class="col-lg-8 col-md-8 col-lg-8">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    q
+                    <idx>lim</idx>
+                </key>
+                = {{round(core.getValue("soloFundacao.pesoEspecifico"))}} . {{round(core.getValue("geometriaMuro.embutimento"))}} + {{round(core.getValue("soloFundacao.coesao"))}} . {{round(core.capacidadeCarga.getNc())}} . {{round(core.resultData.fci)}} + {{round(core.getValue("soloFundacao.pesoEspecifico"))}}
+                . {{round(core.getValue("geometriaMuro.embutimento"))}} . ({{round(core.capacidadeCarga.getNq())}} - 1) . {{round(core.resultData.fqi)}} + 0.5 . {{round(core.getValue("soloFundacao.pesoEspecifico"))}} . {{round(core.resultData.b)}} . {{round(core.capacidadeCarga.getNy())}}
+                . {{round(core.resultData.fyi)}}
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-lg-3 result">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    q
+                    <idx>lim</idx>
+                </key>= {{round(core.resultData.qlim)}}
+            </div>
+        </div>
+    </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-lg-3">
             <div class="left-container vertical-middle left">
                 FS =
             </div>
@@ -288,6 +417,31 @@
             </div>
             <div class="left-container vertical-middle left">
                 ≥ 2.5
+            </div>
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3 col-lg-3">
+                <div class="left-container vertical-middle left">
+                    FS =
+                </div>
+                <div class="left-container left">
+                    <div class="top">
+                        {{round(core.resultData.qlim)}}
+                    </div>
+                    <div class="bottom">{{round(core.resultData.capacidadeCarga)}}
+                    </div>
+                </div>
+                <div class="left-container vertical-middle left">
+                    ≥ 2.5
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-lg-3 result">
+                <div class="left-container vertical-middle left">
+                    <key class="size-1">
+                        f
+                        <idx>ci</idx>
+                    </key> = {{round(core.resultData.fs)}}
+                </div>
             </div>
         </div>
     </div>

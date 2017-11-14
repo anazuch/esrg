@@ -37,7 +37,7 @@
                     <div ng-switch="input.layout">
                         <div ng-switch-when="multi" class="flex">
                             <div ng-repeat="inpt in input.inputs track by $index">
-                                <input type="number" class="form-control" ng-model="inpt.value" placeholder="">
+                                <input type="number" class="form-control" ng-model="inpt.value" placeholder="" ng-change="inputChange()">
                                 <div ng-if="$index < (input.inputs.length - 1)" class="multiply">x</div>
                             </div>
                         </div>
@@ -54,23 +54,23 @@
                                     <div ng-switch-when="number">
                                         <div class="input-adjust">
                                             <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
-                                            <input type="number" class="form-control" ng-model="input.value" ng-disabled="input.disabled" placeholder="">
+                                            <input type="number" class="form-control" ng-model="input.value" ng-disabled="input.disabled" ng-change="inputChange()">
                                             <span class="um" ng-if="input.um">{{::input.um}}</span>
                                         </div>
                                     </div>
                                     <div ng-switch-when="select" class="input-adjust">
                                         <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
-                                        <select class="form-control" ng-model="input.value">
+                                        <select class="form-control" ng-model="input.value" ng-change="inputChange()">
                                             <option ng-repeat="option in input.options" ng-if="!option.hide" value="{{option.value}}">{{option.label}}</option>
                                         </select>
                                         <span class="um" ng-if="input.um">{{::input.um}}</span>
                                     </div>
                                     <div ng-switch-when="checkbox">
-                                        <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="">
+                                        <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="" ng-change="inputChange()">
                                     </div>
                                     <div ng-switch-when="text">
                                         <div class="input-adjust">
-                                            <input type="text" class="form-control" ng-model="input.value" placeholder="">
+                                            <input type="text" class="form-control" ng-model="input.value" placeholder="" ng-change="inputChange()">
                                         </div>
                                     </div>
                                 </div>
@@ -84,27 +84,64 @@
         <div class="main-container">
             <div class="main-content">
                 <div class="row">
-                    <h2 class="center reset bold">Estabilidade Externa</h2>
+                    <h2 class="center reset bold">Dados de entrada</h2>
                 </div>
-                <html-include src="templates/empuxo.html"></html-include>
-                <html-include src="templates/deslizamento.html"></html-include>
-                <html-include src="templates/tombamento.html"></html-include>
-                <html-include src="templates/tensoes.html"></html-include>
-                <html-include src="templates/capacidadeCarga.html"></html-include>
                 <div class="row">
-                    <h2 class="center reset bold">Estabilidade Interna</h2>
+                    <div ng-repeat="obj in data track by $index">
+                        <div class="left inserted-data">
+                            <h5 class="bold">{{::obj.title}}</h5>
+                            <div ng-repeat="input in obj.inputs track by $index">
+                                <div ng-switch="input.layout">
+                                    <div ng-switch-when="multi" class="flex">
+                                        <span ng-repeat="inpt in input.inputs track by $index">
+                                            {{inpt.value}}
+                                            <span ng-if="$index < (input.inputs.length - 1)">x</span>
+                                        </span>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <div ng-switch="input.type">
+                                            <div ng-switch-when="checkbox">
+                                                <light>{{::input.label}} =</light>
+                                                <span ng-if="input.value">Sim</span>
+                                                <span ng-if="!input.value">Não</span>
+                                            </div>
+                                            <div ng-switch-default>
+                                                <span ng-if="input.value">
+                                                    <light>{{::input.label}} =</light> {{input.value}}{{::input.um}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <html-include src="templates/formulasTable1Line1.html"></html-include>
-                <html-include src="templates/formulasTable1Line2.html"></html-include>
-                <html-include src="templates/formulasTable1Line3.html"></html-include>
-                <html-include src="templates/table1.html"></html-include>
-                <html-include src="templates/table2.html"></html-include>
-                <html-include src="templates/table3.html"></html-include>
 
-                <div class="row">
-                    <button ng-show="!isPrinting && calculated" class="btn btn-primary adjust-button" ng-click="printPdf()">Print</button>
+                <div ng-if="calculated">
+                    <div class="row p-30">
+                        <h2 class="center reset bold">Estabilidade Externa</h2>
+                    </div>
+                    <html-include src="templates/empuxo.html"></html-include>
+                    <html-include src="templates/deslizamento.html"></html-include>
+                    <html-include src="templates/tombamento.html"></html-include>
+                    <html-include src="templates/tensoes.html"></html-include>
+                    <html-include src="templates/capacidadeCarga.html"></html-include>
+                    <div class="row p-30">
+                        <h2 class="center reset bold">Estabilidade Interna</h2>
+                    </div>
+                    <html-include src="templates/formulasTable1Line1.html"></html-include>
+                    <html-include src="templates/formulasTable1Line2.html"></html-include>
+                    <html-include src="templates/formulasTable1Line3.html"></html-include>
+                    <html-include src="templates/table1.html"></html-include>
+                    <html-include src="templates/table2.html"></html-include>
+                    <html-include src="templates/formulasTable3.html"></html-include>
+                    <html-include src="templates/table3.html"></html-include>
+
+                    <div class="row">
+                        <button ng-show="!isPrinting && calculated" class="btn btn-primary adjust-button" ng-click="printPdf()">Print</button>
+                    </div>
                 </div>
-
                 <footer class="footer-main">
                     {{::CONSTANTS.COPYRIGHT}}
                 </footer>

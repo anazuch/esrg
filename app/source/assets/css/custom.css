@@ -435,3 +435,89 @@ large {
 .result {
     font-weight: bold;
 }
+
+.formules-align>div {
+    display: inline-block;
+    float: left;
+    margin-right: 40px;
+}
+
+.formules-align {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.p-l-28 {
+    padding-left: 28px;
+}
+
+.p-l-15 {
+    padding-left: 15px;
+}
+
+.row .root-container:nth-child(odd),
+.formules-align:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.row .root-container:nth-child(odd) {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.col-lg-3 {
+    width: 33%;
+    display: inline-block;
+    float: left;
+}
+
+.col-lg-4 {
+    width: 33%;
+    display: inline-block;
+    float: left;
+}
+
+.col-lg-8 {
+    display: inline-block;
+    float: left;
+}
+
+.m-b-0 {
+    margin-bottom: 0px;
+}
+
+.p-30 {
+    padding: 20px;
+}
+
+.row {
+    margin: 0px;
+}
+
+.inserted-data {
+    text-align: center;
+    padding: 17px;
+}
+
+regular {
+    font-weight: 400;
+}
+
+light {
+    font-weight: 200;
+}
+
+bold {
+    font-weight: 700;
+}
+
+.footer-main {
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
+input[type=number],
+input[type=text] {
+    padding-top: 7px !important;
+}
