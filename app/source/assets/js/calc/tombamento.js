@@ -2,7 +2,6 @@
     var tombamento = (function() {
 
         function execute() {
-            console.log("Inicialized calcule of tombamento");
             _calculateTombamento();
         }
 

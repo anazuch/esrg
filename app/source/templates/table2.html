@@ -1,4 +1,4 @@
-<div class="row relt-box">
+<div class="row relt-box" ng-if="calculated">
     <div class="relt-title">
         <h3>Segunda Interação</h3>
     </div>
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </th>
-                    <th>
+                    <th ng-if="core.getValue('soloEnchimento.coesao') != 0">
                         <div class="left">
                             <div class="top">
                                 c
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </th>
-                    <th>
+                    <th ng-if="core.getValue('soloEnchimento.coesao') != 0">
                         <div class="left">
                             <div class="top">
                                 c
@@ -77,8 +77,8 @@
                     <td>{{round(result.tensaoAtuante)}}</td>
                     <td>{{round(result.relacaoTensao)}}</td>
                     <td>{{round(result.relacaoTensaoAdotado)}}</td>
-                    <td>{{round(result.relacaoCoesao)}}</td>
-                    <td>{{round(result.relacaoCoesaoAdotada)}}</td>
+                    <td ng-if="core.getValue('soloEnchimento.coesao') != 0">{{round(result.relacaoCoesao)}}</td>
+                    <td ng-if="core.getValue('soloEnchimento.coesao') != 0">{{round(result.relacaoCoesaoAdotada)}}</td>
                     <td>{{round(result.beta)}}</td>
                     <td>{{round(result.betaAdotado)}}</td>
                     <td>{{round(result.abaco)}}</td>

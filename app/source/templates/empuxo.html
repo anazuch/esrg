@@ -3,7 +3,7 @@
         <h3>Empuxo</h3>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-2 col-md-3">
             <div class="left-container vertical-middle left">
                 <key class="size-2">
                     Z
@@ -19,43 +19,41 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="root-container">
-        <div class="col-lg-3">
-            <div class="left-container vertical-middle left">
-                E =
-            </div>
-            <div class="left">
-                <div class="top">
-                    1
+        <div ng-if="calculated">
+            <div class="col-lg-2 col-md-3">
+                <div class="left-container vertical-middle left">
+                    <key class="size-2">
+                        Z
+                        <idx>eq</idx>
+                    </key>=
                 </div>
-                <div class="bottom ">
-                    2
+                <div class="left">
+                    <div class="top">
+                        {{round(core.getValue("soloEnchimento.pesoEspecifico"))}}
+                    </div>
+                    <div class="bottom ">
+                        {{round(core.getValue("geometriaMuro.sobrecarga"))}}
+                    </div>
                 </div>
             </div>
-            <div class="right-container vertical-middle left">
-                . 𝛾 . H² .
-                <key class="size-1">
-                    K
-                    <idx>a</idx>
-                </key>
+            <div class="col-lg-2 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    <key class="size-2">
+                        Z
+                        <idx>eq</idx>
+                    </key>= {{round(core.resultData.zeq)}}
+                </div>
             </div>
         </div>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
             <div class="left-container vertical-middle left">
                 <key>
                     K
                     <idx>a</idx>
                 </key>
                 =
-            </div>
-            <div class="left">
-                <div class="top">
-                </div>
-                <div class="bottom ">
-                </div>
             </div>
             <div class="right-container vertical-middle left reset">
                 <div class="left-container vertical-middle left m-r-n4">
@@ -77,6 +75,82 @@
                 </div>
                 <div class="right-container vertical-middle left">
                     <large>)</large>
+                </div>
+            </div>
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        K
+                        <idx>a</idx>
+                    </key>
+                    =
+                </div>
+                <div class="right-container vertical-middle left reset">
+                    <div class="left-container vertical-middle left m-r-n4">
+                        tg²
+                    </div>
+                    <div class="right-container vertical-middle left">
+                        <large>(</large>
+                    </div>
+                    <div class="left-container vertical-middle left ">
+                        45˚ -
+                    </div>
+                    <div class="left">
+                        <div class="top">
+                            {{round(core.getValue("soloEnchimento.anguloAtrito"))}}
+                        </div>
+                        <div class="bottom ">
+                            2
+                        </div>
+                    </div>
+                    <div class="right-container vertical-middle left">
+                        <large>)</large>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        K
+                        <idx>a</idx>
+                    </key>
+                    = {{round(core.resultData.ka)}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="root-container">
+        <div class="col-lg-2 col-md-3">
+            <div class="left-container vertical-middle left">
+                E =
+            </div>
+            <div class="left">
+                <div class="top">
+                    1
+                </div>
+                <div class="bottom ">
+                    2
+                </div>
+            </div>
+            <div class="right-container vertical-middle left">
+                . 𝛾 . H² .
+                <key class="size-1">
+                    K
+                    <idx>a</idx>
+                </key>
+            </div>
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-2 col-md-3">
+                <div class="left-container vertical-middle left">
+                    E = 0.5 . {{round(core.getValue("soloEnchimento.pesoEspecifico"))}} . {{round(Math.pow(core.resultData.h, 2))}} . {{round(core.resultData.ka)}}
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    E = {{round(core.resultData.empuxo)}}
                 </div>
             </div>
         </div>

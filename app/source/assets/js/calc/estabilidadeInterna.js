@@ -2,7 +2,6 @@
     var estabilidadeInterna = (function() {
 
         function execute() {
-            console.log("Inicialized calcule of estabilidadeInterna");
             _calculateKo();
             _calculateV();
             _calculateNy();

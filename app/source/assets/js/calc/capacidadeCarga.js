@@ -2,7 +2,6 @@
     var capacidadeCarga = (function() {
 
         function execute() {
-            console.log("Inicialized calcule of capacidadeCarga");
             _calculateLe();
             _calculateTensaoFundacao();
             _calculateE();

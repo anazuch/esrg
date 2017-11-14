@@ -3,7 +3,7 @@
         <h3>Deslizamento</h3>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
             <div class="left-container vertical-middle left">
                 <key>
                     L
@@ -35,6 +35,39 @@
                 </div>
             </div>
         </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3">
+                <div class="vertical-middle left">
+                    <key>
+                        L
+                        <idx>r</idx>
+                    </key>
+                    ≥ 0.5
+                </div>
+                <div class="right-container vertical-point-middle left m-l-5 m-r-5">
+                    .
+                </div>
+                <div class="left">
+                    <div class="top">
+                        {{core.deslizamento.getFS()}} . {{round(core.resultData.h)}} . {{round(core.resultData.ka)}}
+                        <key>
+                            K
+                            <idx>a</idx>
+                        </key>
+                    </div>
+                    <div class="bottom ">
+                        tg∅'
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        L
+                        <idx>r</idx>
+                    </key> = {{round(core.resultData.deslizamento)}}
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>

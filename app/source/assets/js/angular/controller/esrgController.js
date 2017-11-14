@@ -116,7 +116,14 @@
             $scope.inLoading = false;
         }
 
-        $scope.round = core.round;
+        $scope.round = function(value) {
+            var number = core.round(value);
+            return String(number).replace('.', ',')
+        }
+
+        $scope.Math = Math;
+
+        $scope.core = core;
 
         var _currentCompactor = "";
 

@@ -3,7 +3,7 @@
         <h3>Tombamento</h3>
     </div>
     <div class="root-container">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3">
             <div class="left-container vertical-middle left">
                 <key>
                     L
@@ -24,7 +24,35 @@
                     tg∅'
                 </div>
             </div>
-            <div class="right-container vertical-middle left">
+        </div>
+        <div ng-if="calculated">
+            <div class="col-lg-3 col-md-3">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        L
+                        <idx>r</idx>
+                    </key>
+                    ≥
+                </div>
+                <div class="root-calc left">
+                    <div class="top">
+                        <span class="inner-root">
+                            2 . {{round(core.resultData.ka)}} . {{round(Math.pow(core.resultData.h, 2))}}
+                        </span>
+                    </div>
+                    <div class="bottom ">
+                        3
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 result">
+                <div class="left-container vertical-middle left">
+                    <key>
+                        L
+                        <idx>r</idx>
+                    </key>
+                    ≥ {{round(core.resultData.tombamento)}}
+                </div>
             </div>
         </div>
     </div>

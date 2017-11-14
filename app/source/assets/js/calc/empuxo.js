@@ -2,7 +2,6 @@
     var empuxo = (function() {
 
         function execute() {
-            console.log("Inicialized calcule of empuxo");
             _calculateZeq();
             _calculateKa();
             _calculateH();

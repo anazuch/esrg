@@ -431,3 +431,7 @@ large {
     margin-bottom: 15px;
     display: block;
 }
+
+.result {
+    font-weight: bold;
+}
