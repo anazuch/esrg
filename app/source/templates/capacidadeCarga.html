@@ -408,7 +408,7 @@
                         <idx>lim</idx>
                     </key>
                 </div>
-                <div class="bottom">1 +
+                <div class="bottom">
                     <key class="size-2">
                         𝜎'
                         <idx>z,b</idx>
@@ -431,16 +431,14 @@
                     <div class="bottom">{{round(core.resultData.capacidadeCarga)}}
                     </div>
                 </div>
-                <div class="left-container vertical-middle left">
-                    ≥ 2.5
-                </div>
             </div>
             <div class="col-lg-3 col-md-3 col-lg-3 result">
                 <div class="left-container vertical-middle left">
-                    <key class="size-1">
-                        f
-                        <idx>ci</idx>
-                    </key> = {{round(core.resultData.fs)}}
+                    FS = {{round(core.resultData.fs)}}
+                </div>
+                <div class="left-container vertical-middle left">&nbsp;&nbsp;&nbsp;
+                    <span ng-if="core.resultData.fs > 2.5" class="green">OK</span>
+                    <span ng-if="core.resultData.fs <= 2.5" class="red">REDIMENSIONAR</span>
                 </div>
             </div>
         </div>

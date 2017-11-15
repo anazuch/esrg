@@ -455,12 +455,12 @@ large {
     padding-left: 15px;
 }
 
-.row .root-container:nth-child(odd),
-.formules-align:nth-child(odd) {
+.row .root-container:nth-child(even),
+.formules-align:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.row .root-container:nth-child(odd) {
+.row .root-container:nth-child(even) {
     padding-bottom: 5px;
     padding-top: 5px;
 }

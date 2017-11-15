@@ -96,7 +96,7 @@
                                         <span ng-repeat="inpt in input.inputs track by $index">
                                             {{inpt.value}}
                                             <span ng-if="$index < (input.inputs.length - 1)">x</span>
-                                        </span>
+                                        </span>cm
                                     </div>
                                     <div ng-switch-default>
                                         <div ng-switch="input.type">
@@ -137,6 +137,7 @@
                     <html-include src="templates/table2.html"></html-include>
                     <html-include src="templates/formulasTable3.html"></html-include>
                     <html-include src="templates/table3.html"></html-include>
+                    <html-include src="templates/formulasTable4.html"></html-include>
 
                     <div class="row">
                         <button ng-show="!isPrinting && calculated" class="btn btn-primary adjust-button" ng-click="printPdf()">Print</button>

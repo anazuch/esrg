@@ -50,13 +50,9 @@
                 <div class="left">
                     <div class="top">
                         {{core.deslizamento.getFS()}} . {{round(core.resultData.h)}} . {{round(core.resultData.ka)}}
-                        <key>
-                            K
-                            <idx>a</idx>
-                        </key>
                     </div>
                     <div class="bottom ">
-                        tg∅'
+                        {{round(Math.tan(core.convertAngleToRadian(core.getValue("soloEnchimento.anguloAtrito"))))}}
                     </div>
                 </div>
             </div>
@@ -65,7 +61,7 @@
                     <key>
                         L
                         <idx>r</idx>
-                    </key> = {{round(core.resultData.deslizamento)}}
+                    </key> ≥ {{round(core.resultData.deslizamento)}}
                 </div>
             </div>
         </div>
