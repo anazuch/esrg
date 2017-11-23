@@ -37,6 +37,9 @@ const appPath = remote.app.getAppPath();
                 var container = _objData[splittedKey[0]];
                 if (container) {
                     var obj = container.inputs[splittedKey[1]];
+                    if (/^[\d\.]+$/.test(obj.value)) {
+                        return Number(obj.value)
+                    }
                     return obj.value;
                 }
             }

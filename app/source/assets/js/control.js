@@ -8,6 +8,7 @@
             core.tensoesBase.execute();
             core.capacidadeCarga.execute();
             core.estabilidadeInterna.execute();
+            core.estabilidadeConexao.execute();
         }
 
         function init(obj) {

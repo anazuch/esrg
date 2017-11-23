@@ -1,5 +1,5 @@
 (function() {
-    esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
+    esrgApp.controller('EsrgController', ['$scope', '$rootScope', '$timeout', '$interval', function($scope, $rootScope, $timeout, $interval) {
         $scope.data = {};
         $scope.inLoading = true;
 
@@ -12,6 +12,12 @@
 
         var _compactorData = {};
         var _tipoReforcos = [];
+
+        $scope._ = _;
+
+        $scope.getPrettyfiedName = function(option, value) {
+
+        }
 
         $scope.init = function() {
             jsonfile.readFile(core.getPath('dataDefinition'), function(err, data) {
@@ -47,29 +53,41 @@
             }, 1000)
         }
 
+        $scope.getMaxLr = function() {
+            return _.max([core.resultData.deslizamento, core.resultData.tombamento, core.resultData.tensoesBase, core.resultData.le])
+        }
+
         function _bindListeners() {
             $scope.$watch('data.soloFundacao.inputs.igualAEnchimento.value', function() {
                 core.cloneValues($scope.data.soloEnchimento.inputs, $scope.data.soloFundacao.inputs, 'value')
             });
 
+            $scope.$watch('data.geometriaMuro.inputs.espacamentoVertical.value', function(value) {
+                if (value > 0.6) {
+                    $scope.data.geometriaMuro.inputs.espacamentoVertical.value = 0.6;
+                }
+            });
+
             $scope.$watch('data.soloEnchimento.inputs.coesao.value', function(value) {
                 if (value != 0) {
-                    $scope.data.soloEnchimento.inputs.anguloAtrito.options[2].hide = true;
+                    $scope.data.soloEnchimento.inputs.anguloAtrito.options[1].hide = true;
                 } else {
-                    $scope.data.soloEnchimento.inputs.anguloAtrito.options[2].hide = false;
+                    $scope.data.soloEnchimento.inputs.anguloAtrito.options[1].hide = false;
                 }
             });
 
             $scope.$watch('data.soloFundacao.inputs.coesao.value', function(value) {
                 if (value != 0) {
-                    $scope.data.soloFundacao.inputs.anguloAtrito.options[2].hide = true;
+                    $scope.data.soloFundacao.inputs.anguloAtrito.options[1].hide = true;
                 } else {
-                    $scope.data.soloFundacao.inputs.anguloAtrito.options[2].hide = false;
+                    $scope.data.soloFundacao.inputs.anguloAtrito.options[1].hide = false;
                 }
             });
 
             $scope.$watch('data.reforcos.inputs.tipoReforco.value', function(value) {
-                $scope.data.reforcos.inputs.resistenciaTracao.value = Number(value);
+                if (!_.isEmpty(value)) {
+                    $scope.data.reforcos.inputs.resistenciaTracao.value = Number(value);
+                }
             });
 
             $scope.$watch('data.compactacao.inputs.tipo.value', function(value) {
@@ -78,11 +96,11 @@
                 $scope.data.compactacao.inputs.tensao.hide = true;
                 $scope.data.compactacao.inputs.pesoRolo.hide = true;
 
-                $scope.data.compactacao.inputs.area.value = 0;
-                $scope.data.compactacao.inputs.tensao.value = 0;
-                $scope.data.compactacao.inputs.larguraRolo.value = 0;
-                $scope.data.compactacao.inputs.pesoRolo.value = 0;
-                $scope.data.compactacao.inputs.cargaEstatica.value = 0;
+                $scope.data.compactacao.inputs.area.value = "";
+                $scope.data.compactacao.inputs.tensao.value = "";
+                $scope.data.compactacao.inputs.larguraRolo.value = "";
+                $scope.data.compactacao.inputs.pesoRolo.value = "";
+                $scope.data.compactacao.inputs.cargaEstatica.value = "";
                 if (_.isEqual(value, 'placa')) {
                     $scope.data.compactacao.inputs.area.hide = false;
                     $scope.data.compactacao.inputs.tensao.hide = false;
@@ -93,6 +111,23 @@
                     $scope.data.compactacao.inputs.pesoRolo.hide = false;
                     $scope.data.compactacao.inputs.larguraRolo.hide = false;
                     _loadCompactadorData('rolo');
+                    return;
+                }
+            });
+
+
+            $scope.$watch('data.bloco.inputs.tipo.value', function(value) {
+                $scope.data.bloco.inputs.ancoragem.hide = true;
+                $scope.data.bloco.inputs.eficienciaAcoplamento.hide = true;
+                $scope.data.bloco.inputs.tracao.hide = true;
+
+                if (_.isEqual(value, 'autoenvelopado')) {
+                    $scope.data.bloco.inputs.ancoragem.hide = false;
+                    return;
+                }
+                if (_.isEqual(value, 'rigidoBloco')) {
+                    $scope.data.bloco.inputs.eficienciaAcoplamento.hide = false;
+                    $scope.data.bloco.inputs.tracao.hide = false;
                     return;
                 }
             });
@@ -116,6 +151,10 @@
 
         $scope.calculated = false;
         $scope.calc = function() {
+            if (!$scope.calcForm.$valid) {
+                return;
+            }
+
             $scope.inLoading = true;
             core.control.init($scope.data);
             $scope.resultData = core.resultData;

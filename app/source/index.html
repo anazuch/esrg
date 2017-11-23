@@ -31,46 +31,48 @@
     </div>
     <div class="page-container" ng-class="(isPrinting) ? 'printing' : ''">
         <div class="page-sidebar">
-            <div ng-repeat="obj in data track by $index">
-                <h4>{{::obj.title}}</h4>
-                <div class="form-group relative" ng-repeat="input in obj.inputs track by $index">
-                    <div ng-switch="input.layout">
-                        <div ng-switch-when="multi" class="flex">
-                            <div ng-repeat="inpt in input.inputs track by $index">
-                                <input type="number" class="form-control" ng-model="inpt.value" placeholder="" ng-change="inputChange()">
-                                <div ng-if="$index < (input.inputs.length - 1)" class="multiply">x</div>
-                            </div>
-                        </div>
-                        <div ng-switch-default>
-                            <div ng-if="!input.hide">
-                                <label>{{::input.label}}</label>
-                                <span ng-if="!isEmpty(input.info)" class="info">i</span>
-                                <div class="info-view">
-                                    <ul>
-                                        <li ng-repeat="info in input.info">{{::info}}</li>
-                                    </ul>
+            <form id="calcForm" name="calcForm">
+                <div ng-repeat="obj in data track by $index">
+                    <h4>{{::obj.title}}</h4>
+                    <div class="form-group relative" ng-repeat="input in obj.inputs track by $index">
+                        <div ng-switch="input.layout">
+                            <div ng-switch-when="multi" class="flex">
+                                <div ng-repeat="inpt in input.inputs track by $index">
+                                    <input type="number" class="form-control" ng-model="inpt.value" equired="{{input.required}}" placeholder="" ng-change="inputChange()">
+                                    <div ng-if="$index < (input.inputs.length - 1)" class="multiply">x</div>
                                 </div>
-                                <div ng-switch="input.type">
-                                    <div ng-switch-when="number">
-                                        <div class="input-adjust">
+                            </div>
+                            <div ng-switch-default>
+                                <div ng-if="!input.hide">
+                                    <label>{{::input.label}}</label>
+                                    <span ng-if="!isEmpty(input.info)" class="info">i</span>
+                                    <div class="info-view">
+                                        <ul>
+                                            <li ng-repeat="info in input.info">{{::info}}</li>
+                                        </ul>
+                                    </div>
+                                    <div ng-switch="input.type">
+                                        <div ng-switch-when="number">
+                                            <div class="input-adjust">
+                                                <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
+                                                <input type="number" class="form-control" ng-model="input.value" ng-required="input.required" ng-disabled="input.disabled" ng-change="inputChange()">
+                                                <span class="um" ng-if="input.um">{{::input.um}}</span>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="select" class="input-adjust">
                                             <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
-                                            <input type="number" class="form-control" ng-model="input.value" ng-disabled="input.disabled" ng-change="inputChange()">
+                                            <select class="form-control" ng-model="input.value" ng-change="inputChange()" ng-required="input.required">
+                                                <option ng-repeat="option in input.options" ng-if="!option.hide"  value="{{option.value}}">{{option.label}}</option>
+                                            </select>
                                             <span class="um" ng-if="input.um">{{::input.um}}</span>
                                         </div>
-                                    </div>
-                                    <div ng-switch-when="select" class="input-adjust">
-                                        <span class="symbol" ng-if="input.symbol">{{::input.symbol}}&nbsp;=&nbsp;</span>
-                                        <select class="form-control" ng-model="input.value" ng-change="inputChange()">
-                                            <option ng-repeat="option in input.options" ng-if="!option.hide" value="{{option.value}}">{{option.label}}</option>
-                                        </select>
-                                        <span class="um" ng-if="input.um">{{::input.um}}</span>
-                                    </div>
-                                    <div ng-switch-when="checkbox">
-                                        <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="" ng-change="inputChange()">
-                                    </div>
-                                    <div ng-switch-when="text">
-                                        <div class="input-adjust">
-                                            <input type="text" class="form-control" ng-model="input.value" placeholder="" ng-change="inputChange()">
+                                        <div ng-switch-when="checkbox">
+                                            <input type="checkbox" class="form-control input-check" ng-model="input.value" placeholder="" ng-change="inputChange()">
+                                        </div>
+                                        <div ng-switch-when="text">
+                                            <div class="input-adjust">
+                                                <input type="text" class="form-control" ng-required="input.required" ng-model="input.value" placeholder="" ng-change="inputChange()">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
             <button class="btn btn-primary w-100" ng-click="calc()">Calcular</button>
         </div>
         <div class="main-container">
@@ -105,6 +107,9 @@
                                                 <span ng-if="input.value">Sim</span>
                                                 <span ng-if="!input.value">Não</span>
                                             </div>
+                                            <div ng-switch-when="select" ng-if="input.value">
+                                                <light>{{::input.label}} =</light> {{_.find(input.options, {"value" : input.value}).label}}
+                                            </div>
                                             <div ng-switch-default>
                                                 <span ng-if="input.value">
                                                     <light>{{::input.label}} =</light> {{input.value}}{{::input.um}}
@@ -127,6 +132,7 @@
                     <html-include src="templates/tombamento.html"></html-include>
                     <html-include src="templates/tensoes.html"></html-include>
                     <html-include src="templates/capacidadeCarga.html"></html-include>
+                    <html-include src="templates/resumoEstabilidadeExterna.html"></html-include>
                     <div class="row p-30">
                         <h2 class="center reset bold">Estabilidade Interna</h2>
                     </div>
@@ -151,17 +157,18 @@
     </div>
 
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
-    <script type="text/javascript " src="assets/js/core.js "></script>
-    <script type="text/javascript " src="assets/js/control.js "></script>
-    <script type="text/javascript " src="assets/js/calc/empuxo.js "></script>
-    <script type="text/javascript " src="assets/js/calc/deslizamento.js "></script>
-    <script type="text/javascript " src="assets/js/calc/tombamento.js "></script>
-    <script type="text/javascript " src="assets/js/calc/tensoesBase.js "></script>
-    <script type="text/javascript " src="assets/js/calc/capacidadeCarga.js "></script>
-    <script type="text/javascript " src="assets/js/calc/estabilidadeInterna.js "></script>
-    <script type="text/javascript " src="assets/js/angular/app.js "></script>
-    <script type="text/javascript " src="assets/js/angular/controller/esrgController.js "></script>
-    <script type="text/javascript " src="assets/js/angular/directive/includeDirective.js "></script>
+    <script type="text/javascript " src="assets/js/core.js"></script>
+    <script type="text/javascript " src="assets/js/control.js"></script>
+    <script type="text/javascript " src="assets/js/calc/empuxo.js"></script>
+    <script type="text/javascript " src="assets/js/calc/deslizamento.js"></script>
+    <script type="text/javascript " src="assets/js/calc/tombamento.js"></script>
+    <script type="text/javascript " src="assets/js/calc/tensoesBase.js"></script>
+    <script type="text/javascript " src="assets/js/calc/capacidadeCarga.js"></script>
+    <script type="text/javascript " src="assets/js/calc/estabilidadeInterna.js"></script>
+    <script type="text/javascript " src="assets/js/calc/estabilidadeConexao.js"></script>
+    <script type="text/javascript " src="assets/js/angular/app.js"></script>
+    <script type="text/javascript " src="assets/js/angular/controller/esrgController.js"></script>
+    <script type="text/javascript " src="assets/js/angular/directive/includeDirective.js"></script>
 </body>
 
 </html>

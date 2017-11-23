@@ -15,7 +15,7 @@
                     q
                 </div>
                 <div class="bottom ">
-                    𝜎'
+                    𝛾
                 </div>
             </div>
         </div>
@@ -29,10 +29,10 @@
                 </div>
                 <div class="left">
                     <div class="top">
-                        {{round(core.getValue("soloEnchimento.pesoEspecifico"))}}
+                        {{round(core.getValue("geometriaMuro.sobrecarga"))}}
                     </div>
                     <div class="bottom ">
-                        {{round(core.getValue("geometriaMuro.sobrecarga"))}}
+                        {{round(core.getValue("soloEnchimento.pesoEspecifico"))}}
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <key class="size-2">
                         Z
                         <idx>eq</idx>
-                    </key>= {{round(core.resultData.zeq)}}
+                    </key>= {{round(core.resultData.zeq)}}m
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="col-lg-2 col-md-3 result">
                 <div class="left-container vertical-middle left">
-                    E = {{round(core.resultData.empuxo)}}
+                    E = {{round(core.resultData.empuxo)}}kN/m
                 </div>
             </div>
         </div>

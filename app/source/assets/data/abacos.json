@@ -5438,7 +5438,7 @@
         ]
     },
     {
-        "inclinacao": 64.43,
+        "inclinacao": 63.43,
         "anguloAtrito": 35,
         "coesao": 0.1,
         "valores": [{
@@ -6611,7 +6611,7 @@
         ]
     },
     {
-        "inclinacao": 64.43,
+        "inclinacao": 63.43,
         "anguloAtrito": 35,
         "coesao": 0.5,
         "valores": [{

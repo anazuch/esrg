@@ -1,0 +1,108 @@
+<div class="row relt-box" ng-if="calculated">
+    <div class="relt-title">
+        <h3>Quadro resumo</h3>
+    </div>
+    <div class="root-container">
+        <table class="table table-bordered custom-table">
+            <tbody>
+                <tr>
+                    <td>Altura equivalente</td>
+                    <td>
+                        <key class="size-2">
+                            Z
+                            <idx>eq</idx>
+                        </key>= {{round(core.resultData.zeq)}}m
+                    </td>
+                </tr>
+                <tr>
+                    <td>Coeficiente de empuxo ativo</td>
+                    <td>
+                        <key>
+                            K
+                            <idx>a</idx>
+                        </key>
+                        = {{round(core.resultData.ka)}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Empuxo</td>
+                    <td>
+                        E = {{round(core.resultData.empuxo)}}kN/m
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comprimento do reforço</td>
+                    <td>
+                        <key>
+                            L
+                            <idx>r</idx>
+                        </key> = {{round(getMaxLr())}}m
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tensão atuante na base</td>
+                    <td>
+                        <key class="size-2">
+                            𝜎
+                            <idx>z,b</idx>
+                        </key>= {{round(core.resultData.capacidadeCarga)}}kN/m²
+                    </td>
+                </tr>
+                <tr>
+                    <td>Excentricidade</td>
+                    <td>
+                        e = {{round(core.resultData.e)}}m
+                    </td>
+                </tr>
+                <tr>
+                    <td>Largura efetiva da fundação</td>
+                    <td>
+                        B' = {{round(core.resultData.b)}}m
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Fatores de excenticidade e inclinação da carga</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <key class="size-1">
+                            f
+                            <idx>qi</idx>
+                        </key>= {{round(core.resultData.fqi)}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <key>
+                            f
+                            <idx>𝛾i</idx>
+                        </key> = {{round(core.resultData.fyi)}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <key class="size-1">
+                            f
+                            <idx>ci</idx>
+                        </key> = {{round(core.resultData.fci)}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Capacidade de carga da fundação</td>
+                    <td>
+                        <key class="size-2">
+                            q
+                            <idx>lim</idx>
+                        </key>= {{round(core.resultData.qlim)}}kPa
+                    </td>
+                </tr>
+                <tr>
+                    <td>FS Capacidade de Carga</td>
+                    <td>
+                        FS = {{round(core.resultData.fs)}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

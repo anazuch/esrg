@@ -3,67 +3,74 @@
         "title": "Geometria do Muro",
         "inputs": {
             "alturaMuro": {
-                "value": 5.4,
+                "value": "",
                 "symbol": "h",
                 "um": "m",
                 "type": "number",
+                "required": true,
                 "label": "Altura do muro",
                 "info": [
                     "Será aredondado de acordo com o espaçamento"
                 ]
             },
             "sobrecarga": {
-                "value": 0,
+                "value": "",
                 "symbol": "q",
                 "um": "kN/m²",
                 "type": "number",
+                "required": true,
                 "label": "Sobrecarga",
                 "info": [
                     "Esse valor será convertido em metros e somado a altura do muro"
                 ]
             },
             "espacamentoVertical": {
-                "value": 0.6,
+                "value": "",
                 "symbol": "Sv",
                 "um": "m",
                 "type": "number",
+                "required": true,
                 "label": "Espaçamento vertical dos reforços",
                 "info": [
-                    "Esse valor será constante em todo o muro"
+                    "Esse valor será constante em todo o muro",
+                    "Valor deverá ser menor ou igual a 0.6m"
                 ]
             },
             "espacamentoHorizontal": {
-                "value": 1,
+                "value": "",
                 "symbol": "Sh",
                 "um": "m",
                 "type": "number",
+                "required": true,
                 "label": "Espaçamento horizontal dos reforços",
                 "info": [
                     "Esse valor será constante em todo o muro"
                 ]
             },
             "embutimento": {
-                "value": 0.4,
+                "value": "",
                 "symbol": "D",
                 "um": "m",
                 "type": "number",
+                "required": true,
                 "label": "Embutimento",
                 "info": [
                     "Deve ser ≥ 0.4m a favor da segurança"
                 ]
             },
             "inclinacaoFace": {
-                "value": 90,
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
+                "required": true,
                 "label": "Inclinação da face",
                 "fileAssociation": "abacos",
                 "options": [
-                    { "value": "", "label": "Selecionar" },
+                    { "value": null, "label": "Selecionar" },
                     { "value": "90", "label": "90°" },
-                    { "value": "71.60", "label": "71.56° / 3H:1V" },
-                    { "value": "63.43", "label": "63.43° / 2H:1V" }
+                    { "value": "71.60", "label": "71.56° / 3V:1H" },
+                    { "value": "63.43", "label": "63.43° / 2V:1H" }
                 ]
             }
         }
@@ -72,11 +79,12 @@
         "title": "Parâmetros do Solo de enchimento",
         "inputs": {
             "tipoSolo": {
-                "value": "areia",
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
                 "label": "Tipo de solo",
+                "required": true,
                 "fileAssociation": "tipoSolo",
                 "options": [
                     { "value": "", "label": "Selecionar" },
@@ -87,26 +95,29 @@
                 ]
             },
             "pesoEspecifico": {
-                "value": 18,
+                "value": "",
                 "symbol": "γ",
                 "um": "kN/m³",
                 "type": "number",
+                "required": true,
                 "label": "Peso específico",
                 "info": []
             },
             "coesao": {
-                "value": 10,
+                "value": "",
                 "symbol": "c'",
                 "um": "kPa",
                 "type": "number",
+                "required": true,
                 "label": "Coesão",
                 "info": []
             },
             "anguloAtrito": {
-                "value": 35,
+                "value": "",
                 "symbol": "∅'",
                 "um": "°",
                 "type": "select",
+                "required": true,
                 "label": "Ângulo de atrito",
                 "options": [
                     { "value": "", "label": "Selecionar" },
@@ -119,6 +130,7 @@
                 "symbol": "k",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Módulo tangente inicial",
                 "info": []
             },
@@ -127,6 +139,7 @@
                 "symbol": "n",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Módulo expoente",
                 "info": []
             }
@@ -136,20 +149,22 @@
         "title": "Parâmetros do Solo de Fundação",
         "inputs": {
             "igualAEnchimento": {
-                "value": true,
+                "value": false,
                 "symbol": "",
                 "um": "",
                 "type": "checkbox",
+                "required": true,
                 "label": "Mesmo que o enchimento",
                 "info": [
                     "Ao selecionar será clonado os dados do solo de enchimento"
                 ]
             },
             "apoiadoRocha": {
-                "value": true,
+                "value": false,
                 "symbol": "",
                 "um": "",
                 "type": "checkbox",
+                "required": true,
                 "label": "Apoiado em rocha",
                 "info": []
             },
@@ -158,6 +173,7 @@
                 "symbol": "",
                 "um": "",
                 "type": "select",
+                "required": true,
                 "label": "Tipo de solo",
                 "fileAssociation": "tipoSolo",
                 "options": [
@@ -173,6 +189,7 @@
                 "symbol": "γ",
                 "um": "kN/m³",
                 "type": "number",
+                "required": true,
                 "label": "Peso específico",
                 "info": []
             },
@@ -181,6 +198,7 @@
                 "symbol": "c'",
                 "um": "kPa",
                 "type": "number",
+                "required": true,
                 "label": "Coesão",
                 "info": []
             },
@@ -189,6 +207,7 @@
                 "symbol": "∅'",
                 "um": "°",
                 "type": "select",
+                "required": true,
                 "label": "Ângulo de atrito",
                 "options": [
                     { "value": "", "label": "Selecionar" },
@@ -201,6 +220,7 @@
                 "symbol": "k",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Módulo tangente inicial",
                 "info": []
             },
@@ -209,6 +229,7 @@
                 "symbol": "n",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Módulo expoente",
                 "info": []
             }
@@ -218,10 +239,11 @@
         "title": "Parâmetros dos reforços",
         "inputs": {
             "tipoGeossintetico": {
-                "value": "geogrelhaPoliaramida",
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
+                "required": true,
                 "label": "Tipo de geossintético",
                 "fileAssociation": "tipoMaterial",
                 "options": [
@@ -231,10 +253,11 @@
                 ]
             },
             "tipoReforco": {
-                "value": 40,
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
+                "required": true,
                 "label": "Tipo de reforço",
                 "fileAssociation": "tiposReforcos",
                 "options": [
@@ -242,10 +265,11 @@
                 ]
             },
             "si": {
-                "value": 0.4,
+                "value": "",
                 "symbol": "Si",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Índice de rigidez relativa",
                 "info": [
                     "Geogrelha de poliaramida - 0.5 a 3.2",
@@ -253,25 +277,27 @@
                 ]
             },
             "resistenciaTracao": {
-                "value": 35,
+                "value": "",
                 "symbol": "T",
                 "um": "kN/m²",
                 "type": "number",
+                "required": true,
                 "label": "Resistência à tração",
                 "info": []
             },
             "modRigidezTracao": {
-                "value": 700,
+                "value": "",
                 "symbol": "Jr",
                 "um": "kN/m",
                 "type": "number",
+                "required": true,
                 "label": "Módulo de rigidez à tração",
                 "info": []
             }
         }
     },
     "bloco": {
-        "title": "Parâmetros do bloco de Faciamento",
+        "title": "Parâmetros do faceamento",
         "inputs": {
             "largura": {
                 "value": "",
@@ -279,11 +305,56 @@
                 "um": "",
                 "type": "number",
                 "layout": "multi",
+                "required": true,
                 "label": "",
                 "inputs": [
-                    { "key": "largura", "value": 15 },
-                    { "key": "altura", "value": 20 },
-                    { "key": "comprimento", "value": 19 }
+                    { "key": "largura", "value": "" },
+                    { "key": "altura", "value": "" },
+                    { "key": "comprimento", "value": "" }
+                ]
+            },
+            "tipo": {
+                "value": "",
+                "symbol": "",
+                "um": "",
+                "type": "select",
+                "label": "Tipo",
+                "required": true,
+                "options": [
+                    { "value": "", "label": "Selecionar" },
+                    { "value": "autoenvelopado", "label": "Auto Envelopado" },
+                    { "value": "rigidoBloco", "label": "Rígido ou Blocos Intertravados" }
+                ]
+            },
+            "ancoragem": {
+                "value": "",
+                "symbol": "L0",
+                "um": "m",
+                "type": "number",
+                "required": true,
+                "label": "Comprimento de ancoragem",
+                "info": [
+                    "Valor deve ser maior que 1.0m"
+                ]
+            },
+            "eficienciaAcoplamento": {
+                "value": "",
+                "symbol": "CR",
+                "um": "%",
+                "type": "number",
+                "required": true,
+                "label": "Eficiência do acoplamento",
+                "info": []
+            },
+            "tracao": {
+                "value": "",
+                "symbol": "T0",
+                "um": "%",
+                "type": "number",
+                "required": true,
+                "label": "Tensão de tração no reforço",
+                "info": [
+                    "Valor deve ser de 80% a 100% de Tmáx"
                 ]
             }
         }
@@ -292,11 +363,12 @@
         "title": "Parâmetros da compactação",
         "inputs": {
             "tipo": {
-                "value": "rolo",
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
                 "label": "Tipo",
+                "required": true,
                 "options": [
                     { "value": "", "label": "Selecionar" },
                     { "value": "rolo", "label": "Rolo Compactador" },
@@ -304,35 +376,39 @@
                 ]
             },
             "modelos": {
-                "value": "CASE SV2016",
+                "value": "",
                 "symbol": "",
                 "um": "",
                 "type": "select",
                 "label": "Modelos",
+                "required": true,
                 "fileAssociation": "tiposCompactadores"
             },
             "pesoRolo": {
-                "value": 99.5,
+                "value": "",
                 "symbol": "",
                 "um": "kN",
                 "type": "number",
+                "required": true,
                 "label": "Peso rolo",
                 "info": []
             },
             "cargaEstatica": {
-                "value": 325,
+                "value": "",
                 "symbol": "",
                 "um": "kN",
                 "type": "number",
+                "required": true,
                 "label": "Carga estática equivalente",
                 "info": []
             },
             "larguraRolo": {
-                "value": 2.2,
+                "value": "",
                 "symbol": "",
                 "um": "m",
                 "type": "number",
                 "hide": true,
+                "required": true,
                 "label": "Largura do rolo",
                 "info": []
             },
@@ -341,6 +417,7 @@
                 "symbol": "",
                 "um": "m²",
                 "hide": true,
+                "required": true,
                 "type": "number",
                 "label": "Área",
                 "info": []
@@ -350,6 +427,7 @@
                 "symbol": "",
                 "um": "kPa",
                 "type": "number",
+                "required": true,
                 "label": "Tensão vertical",
                 "info": []
             }
@@ -359,10 +437,11 @@
         "title": "Parâmetros análise arrancamento",
         "inputs": {
             "aderencia": {
-                "value": 0.8,
+                "value": "",
                 "symbol": "fa",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Coeficiente de aderência",
                 "info": [
                     "Geogrelha - 0.8 a 1",
@@ -370,10 +449,11 @@
                 ]
             },
             "escala": {
-                "value": 0.7,
+                "value": "",
                 "symbol": "𝛼",
                 "um": "",
                 "type": "number",
+                "required": true,
                 "label": "Fator de escala",
                 "info": [
                     "Geogrelha - 0.7 a 1",

@@ -1,10 +1,42 @@
 <div class="relt-title p-l-15 m-b-0">
     <h3>Estabilidade na conexão</h3>
 </div>
-<div class="root-container formules-align p-l-28">
-    <div>
+<div class="root-container" ng-if="core.getValue('bloco.tipo') == 'autoenvelopado'">
+    <div class="col-lg-3 col-md-3 col-lg-3">
         <div class="left-container vertical-middle left">
-            <key class="size-1">
+            <key>
+                T
+                <idx>0</idx>
+            </key> = 50% .
+            <key>
+                T
+                <idx>max</idx>
+            </key>
+        </div>
+    </div>
+    <div ng-if="calculated">
+        <div class="col-lg-3 col-md-3 col-lg-3">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    P
+                    <idx>r,o</idx>
+                </key> = 50% * {{round(core.resultData.maxTmax)}}
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-lg-3 result">
+            <div class="left-container vertical-middle left">
+                <key>
+                    T
+                    <idx>0</idx>
+                </key> = {{round(core.resultData.maxTmax * 0.5)}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="root-container" ng-if="core.getValue('bloco.tipo') == 'autoenvelopado'">
+    <div class="col-lg-3 col-md-3 col-lg-3">
+        <div class="left-container vertical-middle left">
+            <key class="size-2">
                 P
                 <idx>r,o</idx>
             </key> = 2F* . 𝛼 .
@@ -14,7 +46,7 @@
             </key> .
             <key>
                 L
-                <idx>c</idx>
+                <idx>0</idx>
             </key> ≥ FS .
             <key>
                 T
@@ -22,24 +54,70 @@
             </key>
         </div>
     </div>
-    <div>
+    <div ng-if="calculated">
+        <div class="col-lg-3 col-md-3 col-lg-3">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    P
+                    <idx>r,o</idx>
+                </key> = 2 * {{round(core.resultData.f)}} . {{round(core.getValue("arrancamento.escala"))}} . {{round(core.resultData.maxTensaoVertical)}} . {{round(core.getValue("bloco.ancoragem"))}} ≥ 1,5 . {{round(core.resultData.maxTmax * 0.5)}}
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-lg-3 result">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    P
+                    <idx>r,o</idx>
+                </key> = {{round(core.resultData.sistemaEnvelopado)}} ≥ {{round(core.resultData.fsSistemaEnvelopado)}} &nbsp;&nbsp;
+                <text class="red" ng-if="core.resultData.sistemaEnvelopado < core.resultData.fsSistemaEnvelopado">
+                    NOK 
+                </text>
+                <text class="green" ng-if="core.resultData.sistemaEnvelopado >= core.resultData.fsSistemaEnvelopado">
+                    OK 
+                </text>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="root-container" ng-if="core.getValue('bloco.tipo') == 'rigidoBloco'">
+    <div class="col-lg-3 col-md-3 col-lg-3">
         <div class="left-container vertical-middle left">
-            <key class="size-1">
+            <key class="size-2">
                 P
                 <idx>r,o</idx>
             </key> = CR .
             <key>
                 T
                 <idx>d</idx>
-            </key> .
-            <key>
-                L
-                <idx>c</idx>
             </key> ≥ FS .
             <key>
                 T
                 <idx>o</idx>
             </key>
+        </div>
+    </div>
+    <div ng-if="calculated">
+        <div class="col-lg-3 col-md-3 col-lg-3">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    P
+                    <idx>r,o</idx>
+                </key> = {{round(core.getValue("bloco.eficienciaAcoplamento") / 100)}} . {{round(core.resultData.maxTmax)}} ≥ 1,5 . ({{round(core.resultData.maxTmax)}} . {{round(core.getValue("bloco.tracao") / 100)}})
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-lg-3 result">
+            <div class="left-container vertical-middle left">
+                <key class="size-2">
+                    P
+                    <idx>r,o</idx>
+                </key> = {{round(core.resultData.sistemaBloco)}} ≥ {{round(core.resultData.sistemaFSBloco)}} &nbsp;&nbsp;
+                <text class="red" ng-if="core.resultData.sistemaBloco < core.resultData.sistemaFSBloco">
+                    NOK 
+                </text>
+                <text class="green" ng-if="core.resultData.sistemaBloco >= core.resultData.sistemaFSBloco">
+                    OK 
+                </text>
+            </div>
         </div>
     </div>
 </div>
