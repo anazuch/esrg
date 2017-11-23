@@ -70,7 +70,7 @@
                     <idx>r,o</idx>
                 </key> = {{round(core.resultData.sistemaEnvelopado)}} ≥ {{round(core.resultData.fsSistemaEnvelopado)}} &nbsp;&nbsp;
                 <text class="red" ng-if="core.resultData.sistemaEnvelopado < core.resultData.fsSistemaEnvelopado">
-                    NOK 
+                    REDIMENSIONAR 
                 </text>
                 <text class="green" ng-if="core.resultData.sistemaEnvelopado >= core.resultData.fsSistemaEnvelopado">
                     OK 
@@ -112,7 +112,7 @@
                     <idx>r,o</idx>
                 </key> = {{round(core.resultData.sistemaBloco)}} ≥ {{round(core.resultData.sistemaFSBloco)}} &nbsp;&nbsp;
                 <text class="red" ng-if="core.resultData.sistemaBloco < core.resultData.sistemaFSBloco">
-                    NOK 
+                    REDIMENSIONAR 
                 </text>
                 <text class="green" ng-if="core.resultData.sistemaBloco >= core.resultData.sistemaFSBloco">
                     OK 
