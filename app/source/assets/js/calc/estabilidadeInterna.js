@@ -194,9 +194,14 @@
         }
 
         function _calculateAbaco(returnData, i) {
+            var coesao = returnData.relacaoCoesaoAdotada;
+            if (_.isEqual(core.getValue("soloEnchimento.coesao"), 0)) {
+                coesao = 0;
+            }
+
             var filterData = {
                 anguloAtrito: core.getValue("soloEnchimento.anguloAtrito"),
-                coesao: returnData.relacaoCoesaoAdotada,
+                coesao: coesao,
                 inclinacao: core.getValue("geometriaMuro.inclinacaoFace")
             }
             var currentAbaco = _.find(core.abacos, filterData);

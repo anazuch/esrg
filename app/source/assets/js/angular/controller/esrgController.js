@@ -15,10 +15,6 @@
 
         $scope._ = _;
 
-        $scope.getPrettyfiedName = function(option, value) {
-
-        }
-
         $scope.init = function() {
             jsonfile.readFile(core.getPath('dataDefinition'), function(err, data) {
                 if (_.isEmpty(data)) {
@@ -156,6 +152,9 @@
             }
 
             $scope.inLoading = true;
+            $timeout(function() {
+                $scope.inLoading = true;
+            }, 15000)
             core.control.init($scope.data);
             $scope.resultData = core.resultData;
             $scope.calculated = true;
