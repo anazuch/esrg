@@ -12,7 +12,6 @@
     const remote = require('electron').remote;
     const appPath = process.env.NODE_ENV === 'production' ? remote.app.getAppPath() : __dirname;
 
-    const _isProduction = false;
 
     function createWindow() {
         mainWindow = new BrowserWindow({
@@ -28,9 +27,7 @@
 
         mainWindow.loadURL(`file://${__dirname}/source/index.html`);
 
-        if (!_isProduction) {
-            mainWindow.webContents.openDevTools();
-        }
+        // mainWindow.webContents.openDevTools();
 
         mainWindow.on('closed', function() {
             mainWindow = null;
