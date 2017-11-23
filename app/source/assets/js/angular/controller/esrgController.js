@@ -153,7 +153,7 @@
 
             $scope.inLoading = true;
             $timeout(function() {
-                $scope.inLoading = true;
+                $scope.inLoading = false;
             }, 15000)
             core.control.init($scope.data);
             $scope.resultData = core.resultData;

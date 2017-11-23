@@ -299,22 +299,8 @@
     "bloco": {
         "title": "Parâmetros do faceamento",
         "inputs": {
-            "largura": {
-                "value": "",
-                "symbol": "",
-                "um": "",
-                "type": "number",
-                "layout": "multi",
-                "required": true,
-                "label": "",
-                "inputs": [
-                    { "key": "largura", "value": "" },
-                    { "key": "altura", "value": "" },
-                    { "key": "comprimento", "value": "" }
-                ]
-            },
             "tipo": {
-                "value": "",
+                "value": "autoenvelopado",
                 "symbol": "",
                 "um": "",
                 "type": "select",
@@ -322,8 +308,7 @@
                 "required": true,
                 "options": [
                     { "value": "", "label": "Selecionar" },
-                    { "value": "autoenvelopado", "label": "Auto Envelopado" },
-                    { "value": "rigidoBloco", "label": "Rígido ou Blocos Intertravados" }
+                    { "value": "autoenvelopado", "label": "Auto Envelopado" }
                 ]
             },
             "ancoragem": {
