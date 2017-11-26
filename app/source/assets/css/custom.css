@@ -42,17 +42,17 @@ label {
     width: 300px;
 }
 
-::-webkit-scrollbar-track {
+ ::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar {
+ ::-webkit-scrollbar {
     width: 5px;
     background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb {
+ ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #AEAEAE;
 }
@@ -517,6 +517,7 @@ bold {
     width: 100%;
     text-align: center;
     padding-top: 5px;
+    margin-top: 30px;
 }
 
 input[type=number],
@@ -531,4 +532,80 @@ select.form-control.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-requ
 
 .table {
     background-color: transparent !important
+}
+
+.relative {
+    position: relative !important
+}
+
+.images {
+    text-align: center;
+}
+
+.images img {
+    width: 500px
+}
+
+.vector-1,
+.vector-2,
+.vector-1 span,
+.vector-2 span {
+    position: absolute;
+    display: inline-block;
+}
+
+.vector-1 {}
+
+.vector-1 .geossintetico {
+    bottom: 305px;
+    left: 215px;
+    width: 126px;
+}
+
+.vector-1 .face {
+    bottom: 305px;
+    left: 120px;
+    width: 88px;
+}
+
+.vector-1 .barbaca {
+    bottom: 305px;
+    left: 24px;
+    width: 88px;
+}
+
+.vector-1 .aterro {
+    bottom: 60px;
+    left: 216px;
+    width: 120px;
+}
+
+.vector-1 .terreno {
+    bottom: 49px;
+    left: 351px;
+    width: 120px;
+}
+
+.vector-2 .geossintetico {
+    bottom: 327px;
+    left: 240px;
+    width: 137px;
+}
+
+.vector-2 .terraVegetal {
+    bottom: 279px;
+    left: 41px;
+    width: 144px;
+}
+
+.vector-2 .aterro {
+    bottom: 65px;
+    left: 177px;
+    width: 120px;
+}
+
+.vector-2 .terreno {
+    bottom: 49px;
+    left: 351px;
+    width: 120px;
 }
