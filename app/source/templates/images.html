@@ -1,17 +1,17 @@
-<div class="relative images">
-    <span class="vector-1 relative">
-        <span class="geossintetico">geossintetico</span>
-    <span class="face">face</span>
-    <span class="barbaca">barbaca</span>
-    <span class="aterro">aterro</span>
-    <span class="terreno">terreno</span>
-    <img src="../source/assets/image/vetor1.png" />
-    </span>
-    <span class="vector-2 relative">
-            <span class="geossintetico">geossintetico</span>
-    <span class="terraVegetal">terra Vegetal com ou sem geocelula</span>
-    <span class="aterro">aterro</span>
-    <span class="terreno">terreno</span>
-    <img src="../source/assets/image/vetor2.png" />
-    </span>
+<div class="row relt-box" ng-if="calculated">
+    <div class="relt-title">
+        <h3>Arranjo final da estrutura</h3>
+    </div>
+
+    <div class="relative images">
+        <span class="vector-1 relative">
+    <span class="envelope">Envelope {{round(core.getValue("bloco.ancoragem"))}}m</span>
+        <span class="lr">{{round(getMaxLr())}}m</span>
+        <span class="d">{{round(core.getValue("geometriaMuro.alturaMuro"))}}m</span>
+        <span class="h">{{round(core.getValue("geometriaMuro.embutimento"))}}m</span>
+        <span class="espacamentoVertical">{{round(core.getValue("geometriaMuro.espacamentoVertical"))}}m</span>
+        <span class="geogrelha">Geogrelha {{round(core.getValue("reforcos.resistenciaTracao"))}}kN/m²</span>
+        <img src="../source/assets/image/vetor1.png" />
+        </span>
+    </div>
 </div>

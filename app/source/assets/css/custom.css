@@ -552,60 +552,41 @@ select.form-control.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-requ
 .vector-2 span {
     position: absolute;
     display: inline-block;
+    font-weight: 700;
 }
 
-.vector-1 {}
-
-.vector-1 .geossintetico {
-    bottom: 305px;
-    left: 215px;
+.vector-1 .lr {
+    bottom: 36px;
+    left: 100px;
     width: 126px;
 }
 
-.vector-1 .face {
-    bottom: 305px;
-    left: 120px;
-    width: 88px;
+.vector-1 .d {
+    bottom: 75px;
+    right: 435px;
+    text-align: right;
 }
 
-.vector-1 .barbaca {
-    bottom: 305px;
-    left: 24px;
-    width: 88px;
+.vector-1 .h {
+    bottom: 175px;
+    right: 435px;
+    text-align: right;
 }
 
-.vector-1 .aterro {
-    bottom: 60px;
-    left: 216px;
-    width: 120px;
+.vector-1 .envelope {
+    bottom: 306px;
+    right: 336px;
+    width: 126px;
 }
 
-.vector-1 .terreno {
-    bottom: 49px;
-    left: 351px;
-    width: 120px;
+.vector-1 .espacamentoVertical {
+    bottom: 112px;
+    left: 165px;
+    text-align: left;
 }
 
-.vector-2 .geossintetico {
-    bottom: 327px;
-    left: 240px;
-    width: 137px;
-}
-
-.vector-2 .terraVegetal {
-    bottom: 279px;
-    left: 41px;
-    width: 144px;
-}
-
-.vector-2 .aterro {
-    bottom: 65px;
-    left: 177px;
-    width: 120px;
-}
-
-.vector-2 .terreno {
-    bottom: 49px;
-    left: 351px;
-    width: 120px;
+.vector-1 .geogrelha {
+    bottom: 175px;
+    left: 131px;
+    text-align: left;
 }
